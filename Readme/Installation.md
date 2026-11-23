@@ -19,4 +19,6 @@ latexmk -norc -r latexmkrc -pdf -interaction=nonstopmode -halt-on-error disserta
 
 Сборка проверена с TeX Live 2026 на Windows. Эту же команду выполняет GitHub Actions на Linux. [Автоматические сборки](https://github.com/rockyversus/kiselev-geometry-schoolbook/actions)
 
+В разных установках TeX Live могут отличаться переносы и разбивка страниц. Номера страниц для цитирования и сообщений об ошибках берите из PDF опубликованного выпуска. [Выпуски книги](https://github.com/rockyversus/kiselev-geometry-schoolbook/releases)
+
 [К описанию книги](../README.md)
