@@ -4,7 +4,7 @@
 
 Бесплатное электронное издание «Элементарной геометрии» А. П. Киселёва по 23-му изданию 1914 года.
 
-[Скачать PDF](https://github.com/rockyversus/kiselev-geometry-schoolbook/releases/download/v1.0.0/kiselev-stereometry-book-1.pdf) · [Скан издания 1914 года](<https://commons.wikimedia.org/wiki/File:А._П._Киселёв._Элементарная_геометрия_(1914).djvu>)
+[Скачать PDF](https://github.com/rockyversus/kiselev-geometry-schoolbook/releases/download/v1.0.0/kiselev-stereometry-book-1.pdf) · [Первый выпуск v1.0.0](https://github.com/rockyversus/kiselev-geometry-schoolbook/releases/tag/v1.0.0) · [Скан издания 1914 года](<https://commons.wikimedia.org/wiki/File:А._П._Киселёв._Элементарная_геометрия_(1914).djvu>)
 
 В книгу вошли введение и пять глав Книги I, §§ 344–403. Все 52 рисунка Книги I, с 301-го по 352-й, восстановлены в TikZ.
 
