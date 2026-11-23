@@ -1,6 +1,6 @@
 # Установка и сборка Книги I
 
-Понадобится TeX Live с поддержкой кириллицы и установленными `pdflatex`, `latexmk`, `biber` и `makeindex`. Полная установка TeX Live включает пакеты, которые использует проект. [TeX Live](https://tug.org/texlive/) · [Latexmk](https://ctan.org/pkg/latexmk)
+Понадобится TeX Live 2026 с поддержкой кириллицы и установленными `pdflatex`, `latexmk`, `biber` и `makeindex`. Полная установка TeX Live включает пакеты, которые использует проект. [TeX Live](https://tug.org/texlive/) · [Latexmk](https://ctan.org/pkg/latexmk)
 
 В Windows откройте PowerShell, в Linux или macOS — терминал. Перейдите в папку с `dissertation.tex` и запустите:
 
@@ -17,6 +17,6 @@ latexmk -norc -r latexmkrc -pdf -interaction=nonstopmode -halt-on-error disserta
 - При ошибке начните с первого сообщения об ошибке в `dissertation.log`. Место в исходниках обычно указано рядом.
 - Предупреждение Biber об отсутствии записей для цитирования ожидаемо для текущей Книги I. Ссылки на параграфы, рисунки и скан оформлены через LaTeX.
 
-Полная сборка проверена с TeX Live 2026 на Windows.
+Сборка проверена с TeX Live 2026 на Windows. Эту же команду выполняет GitHub Actions на Linux. [Автоматические сборки](https://github.com/rockyversus/kiselev-geometry-schoolbook/actions)
 
 [К описанию книги](../README.md)

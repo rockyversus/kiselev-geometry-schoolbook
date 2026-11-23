@@ -34,7 +34,7 @@ TARGET ?= $(SOURCE)
 # -xelatex	= xelatex without dvi
 # -pdflua	= lualatex with dvi  (faster than -lualatex)
 # -lualatex	= lualatex without dvi
-BACKEND ?= -pdfxe
+BACKEND ?= -pdf
 
 # Do not modify the section below. Edit usercfg.mk instead.
 DRAFTON ?= # 1=on;0=off
@@ -100,9 +100,11 @@ tikz: TARGET=$(basename $(notdir $(TIKZFILE)))
 tikz:
 	$(compile)
 
-##! добавление PDF книги в систему контроля версий
-release: all
-	git add dissertation.pdf
+##! подготовка PDF Книги I для выпуска
+release: LATEXMKFLAGS += -interaction=nonstopmode
+release: pdflatex
+	perl -MFile::Copy=copy -e "copy(shift, shift) or die qq(Could not copy the release PDF\n)" dissertation.pdf kiselev-stereometry-book-1.pdf
+	git add -- kiselev-stereometry-book-1.pdf
 
 ##! очистка от временных файлов цели TARGET
 clean-target:

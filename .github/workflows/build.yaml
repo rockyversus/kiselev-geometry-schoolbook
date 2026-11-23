@@ -4,21 +4,25 @@ on:
   push:
     branches: [ main ]
     tags: [ 'v*' ]
+  pull_request:
+    branches: [ main ]
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    
-      - uses: actions/checkout@v4
-
-      # Install and cache TeX Live
-      - name: Setup TeX Live
-        uses: zauguin/install-texlive@v4 # https://github.com/zauguin/install-texlive
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
-          texlive_version: 2023 # failed to build with 2024 and 2025
-          cache_version: 1.1
+          persist-credentials: false
+
+      - name: Setup TeX Live
+        uses: zauguin/install-texlive@c9f3ea3d51b2e04d092c4f9d208a19542d5dabcf # v4
+        with:
+          texlive_version: '2026'
           packages: |
             scheme-medium
             latexmk
@@ -27,45 +31,20 @@ jobs:
             makecell
             collection-latexextra
             collection-fontsrecommended
-            collection-fontsextra
             collection-langcyrillic
+            cm-super
             biblatex-gost
 
-      # Cache make and ttf-mscorefonts-installer
-      - name: Cache other dependencies 
-        uses: awalsh128/cache-apt-pkgs-action@v1.6.0 # https://github.com/marketplace/actions/cache-apt-packages
-        with:
-          packages: make ttf-mscorefonts-installer
-          version: 1.0
+      - name: Build Book I
+        run: latexmk -norc -r latexmkrc -pdf -interaction=nonstopmode -halt-on-error dissertation.tex
 
-      # Refresh font cache so TeX sees MS fonts
-      - name: Refresh font cache
-        run: sudo fc-cache -fv
-
-      - name: Make
-        run: |
-          make
-
-      - name: Show LaTeX xelatex.log log on failure
+      - name: Show LaTeX log on failure
         if: failure()
-        run: |
-          echo "===== xelatex.log ====="
-          cat xelatex.log || true
+        run: cat dissertation.log || true
 
-      - name: Show LaTeX latexmk.log log on failure
-        if: failure()
-        run: |
-          echo "===== latexmk.log ====="
-          cat latexmk.log || true
-
-      - name: Show LaTeX dissertation.log log on failure
-        if: failure()
-        run: |
-          echo "===== dissertation.log ====="
-          cat dissertation.log || true
-
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: pdf
           path: dissertation.pdf
           retention-days: 7
+          if-no-files-found: error
