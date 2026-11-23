@@ -1,0 +1,31 @@
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=3pt}]
+    \coordinate (A) at (-1.4,2.5);
+    \coordinate (B) at (-1.4,-2.7);
+    \coordinate (C) at (-1.4,0);
+    \coordinate (D) at (2.05,0.78);
+    \coordinate (E) at (1.2,-0.92);
+    \coordinate (Pbottom) at (2.05,-1.92);
+    \coordinate (Qbottom) at (1.2,-3.62);
+
+    % Плоскость R и скрытая часть её заднего края.
+    \draw[thick] (-1.4,1.26) -- (-2.05,1.26) -- (-3,-1.38);
+    \draw[thick,densely dashed] (-1.4,1.26) -- (2.05,1.26);
+    \draw[very thick] (-3,-1.38) -- (2.7,-1.38) -- (3.65,1.26) -- (2.05,1.26);
+
+    % Плоскости P и Q проходят через общую прямую AB.
+    \draw[thick] (A) -- (2.05,3.28) -- (D) -- (C)
+        (A) -- (1.2,1.58) -- (E) -- (C) -- (A);
+    \draw[thick,densely dashed] (C) -- (-1.4,-1.38)
+        (D) -- (2.05,-1.38) (E) -- (1.2,-1.38) (B) -- (Pbottom);
+    \draw[thick] (-1.4,-1.38) -- (B) -- (Qbottom) -- (1.2,-1.38)
+        (2.05,-1.38) -- (Pbottom);
+
+    \node[above left] at (A) {\(A\)};
+    \node[left] at (B) {\(B\)};
+    \node[left] at (C) {\(C\)};
+    \node[right] at (D) {\(D\)};
+    \node[above right] at (E) {\(E\)};
+    \node at (1.5,2.85) {\(P\)};
+    \node at (0.5,1.49) {\(Q\)};
+    \node at (-2.48,-1.02) {\(R\)};
+\end{tikzpicture}

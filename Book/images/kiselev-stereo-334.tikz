@@ -1,0 +1,40 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (A) at (0,2.45);
+    \coordinate (B) at (0,-0.9);
+    \coordinate (C) at (3.36,-0.6);
+    \coordinate (C11) at (2.92,-1.35);
+    \coordinate (D) at (2.02,-2.11);
+    \draw[thick] (-1.14,-2.75) -- (-0.27,-0.26) -- (0,-0.26)
+        (3.36,-0.26) -- (4.10,-0.26);
+    \draw[thick,densely dashed] (0,-0.26) -- (3.36,-0.26);
+    \draw[very thick] (-1.14,-2.75) -- (3.19,-2.75) -- (4.10,-0.26);
+    \draw[thick] (B) -- (A) -- (3.36,2.75) -- (C)
+        (A) -- (2.92,2.00) -- (C11);
+    \draw[thick,densely dashed] (B) -- (C) (B) -- (C11);
+    \draw[very thick] (A) -- (2.02,1.24) -- (D) -- (B);
+    \node[above left] at (A) {\(A\)};
+    \node[below left] at (B) {\(B\)};
+    \node[right] at (C) {\(C\)};
+    \node[below,xshift=3pt] at (C11) {\(C_{11}\)};
+    \node[right] at (D) {\(D\)};
+    \node[below left] at (3.36,2.75) {\(Q\)};
+    \node[below left] at (2.92,2.00) {\(Q_{11}\)};
+    \node[below left] at (2.02,1.24) {\(P\)};
+    \node at (-0.56,-2.34) {\(R\)};
+
+    \begin{scope}[xshift=5.12cm]
+        \coordinate (A1) at (0,2.45);
+        \coordinate (B1) at (0,-0.9);
+        \coordinate (C1) at (2.82,-0.62);
+        \coordinate (D1) at (2.44,-1.93);
+        \draw[thick] (B1) -- (A1) -- (2.82,2.73) -- (C1);
+        \draw[thick,densely dashed] (B1) -- (C1);
+        \draw[very thick] (A1) -- (2.44,1.42) -- (D1) -- (B1);
+        \node[above left] at (A1) {\(A_1\)};
+        \node[left] at (B1) {\(B_1\)};
+        \node[right] at (C1) {\(C_1\)};
+        \node[right] at (D1) {\(D_1\)};
+        \node[below left] at (2.82,2.73) {\(Q_1\)};
+        \node[below left] at (2.44,1.42) {\(P_1\)};
+    \end{scope}
+\end{tikzpicture}

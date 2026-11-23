@@ -1,0 +1,25 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (A) at (0,2.55);
+    \coordinate (B) at (0,-2.13);
+    \coordinate (D) at (0,0.89);
+    \coordinate (D1) at (0,-0.7);
+    \coordinate (C) at (3.24,1.67);
+    \coordinate (C1) at (3.24,0.08);
+    \coordinate (E) at (2.17,0.12);
+    \coordinate (E1) at (2.17,-1.47);
+
+    \draw[thick] (B) -- (A) -- (3.24,3.33) -- (3.24,-1.35);
+    \draw[thick,densely dashed] (B) -- (3.24,-1.35) (D) -- (C) (D1) -- (C1);
+    \draw[very thick] (A) -- (2.17,1.78) -- (2.17,-2.90) -- (B);
+    \draw[thick] (D) -- (E) (D1) -- (E1);
+    \node[above left] at (A) {\(A\)};
+    \node[below left] at (B) {\(B\)};
+    \node[left] at (D) {\(D\)};
+    \node[left] at (D1) {\(D_1\)};
+    \node[right] at (C) {\(C\)};
+    \node[right] at (C1) {\(C_1\)};
+    \node[above right,yshift=1pt] at (E) {\(E\)};
+    \node[above right,yshift=1pt] at (E1) {\(E_1\)};
+    \node at (2.84,2.88) {\(P\)};
+    \node at (1.53,1.59) {\(Q\)};
+\end{tikzpicture}

@@ -1,0 +1,27 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (S) at (0,3.4);
+    \coordinate (A) at (-2.00,-0.35);
+    \coordinate (B) at (-0.23,-1.15);
+    \coordinate (C) at (1.95,-0.24);
+    \path (A) -- (C) coordinate[pos=0.618] (D);
+    \foreach \point in {A,B,C}{
+        \path (S) -- (\point) coordinate[pos=1.17] (tip);
+        \draw[thick] (S) -- (tip);
+    }
+    \path (S) -- (D) coordinate[pos=1.32] (tip);
+    \draw[very thick] (A) -- (B) -- (C);
+    \draw[thick,densely dashed] (A) -- (C) (S) -- (tip);
+    \draw[thick] (S) ++(-118.07:0.85) arc[start angle=-118.07,end angle=-92.90,radius=0.85];
+    \draw[thick] (S) ++(-118.07:1.02) arc[start angle=-118.07,end angle=-83.18,radius=1.02];
+    \path (S) -- (B) coordinate[pos=0.59] (BmarkA) coordinate[pos=0.63] (BmarkB);
+    \path (S) -- (D) coordinate[pos=0.59] (DmarkA) coordinate[pos=0.63] (DmarkB);
+    \draw[thick] (BmarkA) ++(-0.15,0.01) -- ++(0.30,-0.02)
+        (BmarkB) ++(-0.15,0.01) -- ++(0.30,-0.02)
+        (DmarkA) ++(-0.15,-0.018) -- ++(0.30,0.036)
+        (DmarkB) ++(-0.15,-0.018) -- ++(0.30,0.036);
+    \node[above] at (S) {\(S\)};
+    \node[left] at (A) {\(A\)};
+    \node[below left] at (B) {\(B\)};
+    \node[right] at (C) {\(C\)};
+    \node[above right] at (D) {\(D\)};
+\end{tikzpicture}

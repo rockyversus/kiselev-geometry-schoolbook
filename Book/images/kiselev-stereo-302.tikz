@@ -1,0 +1,20 @@
+\begin{tikzpicture}[scale=1.5,line cap=round,every node/.style={inner sep=3.5pt}]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (4,0);
+    \coordinate (C) at (3.2,-1.8);
+    \coordinate (D) at (1.74,-2.052);
+    \coordinate (E) at (2.12,0);
+    \coordinate (F) at (1.92,-1.08);
+    \coordinate (M) at (2.24,0.648);
+
+    \draw[thick] (-1,0) -- (5,0);
+    \draw[thick] (-1,0.5625) -- (4.28,-2.4075);
+    \draw[thick] (4.4,0.9) -- (2.9,-2.475);
+    \draw[thick] (2.34,1.188) -- (D);
+
+    \foreach \point/\placement in {A/below left,B/above left,E/above left,F/below left,M/right} {
+        \filldraw[fill=white] (\point) circle[radius=1pt] node[\placement] {\(\point\)};
+    }
+    \filldraw[fill=white] (C) circle[radius=1pt] node[above right,xshift=5pt] {\(C\)};
+    \node[below] at (D) {\(D\)};
+\end{tikzpicture}

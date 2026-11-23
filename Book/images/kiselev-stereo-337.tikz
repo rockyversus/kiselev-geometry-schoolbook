@@ -1,0 +1,20 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (D) at (-1.42,-1.38);
+    \coordinate (E) at (1.41,1.08);
+    \path (D) -- (E) coordinate[pos=0.49] (B);
+    \coordinate (A) at (-0.033,2.38);
+    \coordinate (C) at (1.97,-0.175);
+    \draw[thick] (-3.27,-1.38) -- (-2.29,1.08) -- (-1.42,1.08)
+        (E) -- (3.21,1.08);
+    \draw[thick,densely dashed] (-1.42,1.08) -- (E);
+    \draw[very thick] (-3.27,-1.38) -- (2.23,-1.38) -- (3.21,1.08);
+    \draw[thick] (D) -- (-1.42,1.17) -- (1.41,3.63) -- (E) -- (D);
+    \draw[very thick] (A) -- (B) -- (C);
+    \node[above left] at (A) {\(A\)};
+    \node[left] at (B) {\(B\)};
+    \node[right] at (C) {\(C\)};
+    \node[below] at (D) {\(D\)};
+    \node[above right] at (E) {\(E\)};
+    \node[above left] at (-1.42,1.17) {\(P\)};
+    \node[right] at (2.89,0.29) {\(Q\)};
+\end{tikzpicture}

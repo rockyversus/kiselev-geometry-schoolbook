@@ -1,0 +1,308 @@
+\chapter{Параллельные прямые и плоскости}\label{ch:ch3}
+
+\begingroup
+\setlength{\intextsep}{10pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{12pt plus 2pt minus 2pt}
+
+% А. П. Киселёв, «Элементарная геометрия», 23-е издание, 1914. Печатные с. 283–292.
+% Страницы скана планиметрии на 11 больше печатных.
+\newcommand*{\kiselevPlanimetryPage}[2]{%
+    \href{https://commons.wikimedia.org/wiki/File:\%D0\%90._\%D0\%9F._\%D0\%9A\%D0\%B8\%D1\%81\%D0\%B5\%D0\%BB\%D1\%91\%D0\%B2._\%D0\%AD\%D0\%BB\%D0\%B5\%D0\%BC\%D0\%B5\%D0\%BD\%D1\%82\%D0\%B0\%D1\%80\%D0\%BD\%D0\%B0\%D1\%8F_\%D0\%B3\%D0\%B5\%D0\%BE\%D0\%BC\%D0\%B5\%D1\%82\%D1\%80\%D0\%B8\%D1\%8F_(1914).djvu?page=#1}{#2}%
+}
+
+\section*{Параллельные прямые}
+\addcontentsline{toc}{section}{Параллельные прямые}
+
+% Печатная с. 283.
+\kiselevparagraph{para:skew-and-parallel-lines} \textbf{Предварительное замечание.} Две прямые могут быть расположены в пространстве так, что через них нельзя провести плоскость. Возьмём, например, две такие прямые \(AB\) и \(DE\) (рис.~\ref{fig:kiselev-stereo-314}), из которых одна пересекает некоторую плоскость \(P\), а другая лежит в ней, но не проходит через точку пересечения \(C\). Через такие две прямые нельзя провести плоскость, потому что в противном случае через прямую \(DE\) и точку \(C\) проходили бы две различные плоскости: одна --- \(P\), пересекающая прямую \(AB\), и другая, содержащая её. Это невозможно (\hyperref[item:plane-through-line-and-point]{см.~§~\ref*{para:plane-uniqueness-corollaries}, пункт~\ref*{item:plane-through-line-and-point}}).
+
+\begin{figure}[htbp]
+    \centering
+    \renewcommand{\thefigure}{314}
+    \captionsetup{name=Рис.,labelsep=period}
+    \input{Book/images/kiselev-stereo-314.tikz}
+    \caption{Прямые \(AB\) и \(DE\), через которые нельзя провести плоскость}\label{fig:kiselev-stereo-314}
+\end{figure}
+
+Две прямые, не лежащие в одной плоскости, конечно, не пересекаются, сколько бы их ни продолжали. Однако их не называют параллельными. Это название оставляют только для тех прямых, которые, \emph{находясь в одной плоскости}, не пересекаются, сколько бы их ни продолжали.
+
+Две прямые, не лежащие в одной плоскости, называются \emph{скрещивающимися}.
+
+В планиметрии мы видели (см.~Планиметрия, \kiselevPlanimetryPage{70}{§~77} и \kiselevPlanimetryPage{71}{§~79}), что через любую точку \emph{плоскости} можно провести прямую, параллельную данной прямой, и притом только одну. То же самое можно сказать о любой точке \emph{пространства}, потому что через точку и данную прямую можно провести плоскость, и только одну.
+
+% Печатная с. 284.
+\kiselevparagraph{para:plane-intersects-parallel-lines} \textbf{Теорема. Если плоскость} \(P\) (рис.~\ref{fig:kiselev-stereo-315}) \textbf{пересекает одну из параллельных прямых} \(AB\)\textbf{, то она пересекает и другую} \(CD\)\textbf{.}
+
+\begin{figure}[htbp]
+    \centering
+    \renewcommand{\thefigure}{315}
+    \captionsetup{name=Рис.,labelsep=period}
+    \input{Book/images/kiselev-stereo-315.tikz}
+    \caption{Плоскость \(P\) пересекает параллельные прямые \(AB\) и \(CD\)}\label{fig:kiselev-stereo-315}
+\end{figure}
+
+Проведём через \(AB\) и \(CD\) плоскость. Эта плоскость содержит точку \(B\), в которой прямая \(AB\) пересекается с \(P\). Значит, эта плоскость пересекается с \(P\) по некоторой прямой \(BE\) (\hyperref[para:intersecting-planes]{см.~§~\ref*{para:intersecting-planes}}). Эта прямая, находясь в одной плоскости с \(AB\) и \(CD\) и пересекая одну из этих параллельных, должна пересечь и другую (\kiselevPlanimetryPage{71}{см.~Планиметрия, §~80}) в некоторой точке \(F\). Точка \(F\), находясь одновременно на прямой \(BE\) и на прямой \(CD\), должна быть точкой пересечения плоскости \(P\) с прямой \(CD\).
+
+\kiselevparagraph{para:plane-perpendicular-to-parallel-lines} \textbf{Теорема. Если плоскость} \(P\) (рис.~\ref{fig:kiselev-stereo-316}) \textbf{перпендикулярна к одной из параллельных прямых} \(AB\)\textbf{, то она перпендикулярна и к~другой}~\(CD\)\textbf{.}
+
+\begin{figure}[htbp]
+    \centering
+    \renewcommand{\thefigure}{316}
+    \captionsetup{name=Рис.,labelsep=period}
+    \input{Book/images/kiselev-stereo-316.tikz}
+    \caption{Плоскость \(P\), перпендикулярная к параллельным прямым \(AB\) и \(CD\)}\label{fig:kiselev-stereo-316}
+\end{figure}
+
+Предстоит доказать, во-первых, что плоскость \(P\) пересекает прямую \(CD\), а во-вторых, что эта прямая перпендикулярна к каким-нибудь двум прямым, проведённым в плоскости \(P\) через основание \(CD\).
+
+\begin{enumerate}[label=\arabic*),ref=\arabic*]
+    \item Плоскость \(P\) должна пересечь \(CD\), потому что она, по условию, пересекает прямую \(AB\), параллельную \(CD\).
+    \item Проведём через \(AB\) и \(CD\) плоскость \(R\) и возьмём её пересечение \(BD\) с плоскостью \(P\). Так как, по условию, \(AB\) перпендикулярна к \(P\), то \(AB\perp BD\). Поэтому и \(CD\perp BD\) (\kiselevPlanimetryPage{72}{см.~Планиметрия, §~82}). Проведём в плоскости \(P\) прямую \(DE\), перпендикулярную к \(BD\), и возьмём какую-нибудь наклонную \(MD\), для которой проекцией служит \(BD\). Прямая \(ED\), перпендикулярная к проекции \(BD\), должна быть перпендикулярной и к наклонной \(MD\) (\hyperref[para:three-perpendiculars]{см.~§~\ref*{para:three-perpendiculars}})
+    % Печатная с. 285.
+    и, следовательно, перпендикулярна к плоскости \(R\) (\hyperref[para:perpendicular-plane-criterion]{см.~§~\ref*{para:perpendicular-plane-criterion}}), а значит, и к прямой \(CD\). Таким образом, прямая \(CD\) оказывается перпендикулярной к двум прямым плоскости \(P\), именно к \(DB\) и к \(DE\). Следовательно, она перпендикулярна к этой плоскости.
+\end{enumerate}
+
+\kiselevparagraph{para:lines-normal-to-same-plane} \textbf{Обратная теорема. Если две прямые} \(AB\) и \(CD\) (рис.~\ref{fig:kiselev-stereo-317}) \textbf{перпендикулярны к одной и той же плоскости} \(P\)\textbf{, то они параллельны.}
+
+\begin{figure}[htbp]
+    \centering
+    \renewcommand{\thefigure}{317}
+    \captionsetup{name=Рис.,labelsep=period}
+    \input{Book/images/kiselev-stereo-317.tikz}
+    \caption{Прямые \(AB\) и \(CD\), перпендикулярные к одной плоскости \(P\)}\label{fig:kiselev-stereo-317}
+\end{figure}
+
+Предположим противное, то есть что прямые \(AB\) и \(CD\) не параллельны. Проведём тогда через точку \(D\) прямую, параллельную \(AB\). При нашем предположении это будет какая-нибудь прямая \(DC_1\), не совпадающая с \(DC\). Согласно \hyperref[para:plane-perpendicular-to-parallel-lines]{прямой теореме} прямая \(DC_1\) будет перпендикулярна к плоскости \(P\). Тогда у нас будут два перпендикуляра к плоскости \(P\), проходящие через одну и ту же точку, \(DC\) и \(DC_1\). Так как это невозможно, то нельзя допустить, чтобы прямые \(AB\) и \(CD\) были непараллельны.
+
+\kiselevparagraph{para:lines-parallel-to-same-line} \textbf{Теорема. Если две прямые} \(A\) и \(B\) (рис.~\ref{fig:kiselev-stereo-318}) \textbf{параллельны третьей прямой} \(C\)\textbf{, то они параллельны между собой.}
+
+\begin{figure}[htbp]
+    \centering
+    \renewcommand{\thefigure}{318}
+    \captionsetup{name=Рис.,labelsep=period}
+    \input{Book/images/kiselev-stereo-318.tikz}
+    \caption{Прямые \(A\) и \(B\), параллельные третьей прямой \(C\)}\label{fig:kiselev-stereo-318}
+\end{figure}
+
+Проведём плоскость \(P\), перпендикулярную к \(C\). Тогда \(A\) и \(B\) будут перпендикулярны к этой плоскости (\hyperref[para:plane-perpendicular-to-parallel-lines]{см.~§~\ref*{para:plane-perpendicular-to-parallel-lines}}) и, следовательно, \(A\parallel B\) (\hyperref[para:lines-normal-to-same-plane]{см.~§~\ref*{para:lines-normal-to-same-plane}}).
+
+\kiselevparagraph{para:plane-intersection-parallel-to-lines} \textbf{Теорема. Если две прямые} \(A\) и \(B\) (рис.~\ref{fig:kiselev-stereo-319}) \textbf{параллельны и через каждую из них проходит плоскость, то линия пересечения этих плоскостей} (если она существует) \textbf{параллельна первым прямым.}
+
+\begin{figure}[htbp]
+    \centering
+    \renewcommand{\thefigure}{319}
+    \captionsetup{name=Рис.,labelsep=period}
+    \input{Book/images/kiselev-stereo-319.tikz}
+    \caption{Линия пересечения плоскостей параллельна прямым \(A\) и \(B\)}\label{fig:kiselev-stereo-319}
+\end{figure}
+
+% Печатная с. 286.
+Пусть через прямую \(A\) проходит плоскость \(P\) и через прямую \(B\) --- плоскость \(Q\), и пусть эти плоскости пересекаются по прямой \(CD\). Требуется доказать, что \(CD\parallel A\) и \(CD\parallel B\). Через какую-нибудь точку \(E\) линии пересечения проведём прямую \(A_1\), параллельную \(A\). Тогда эта прямая должна быть также параллельна \(B\). Так как прямая \(A_1\) параллельна \(A\) и проходит через точку \(E\), то \(A_1\) должна лежать в плоскости, содержащей прямую \(A\) и точку \(E\), то есть в плоскости \(P\). С другой стороны, так как прямая \(A_1\) параллельна \(B\) и проходит через точку \(E\), то \(A_1\) должна лежать в плоскости \(Q\). Если же прямая \(A_1\) лежит одновременно в плоскостях \(P\) и \(Q\), то она должна совпадать с линией пересечения \(CD\). Значит, \(CD\parallel A\) и \(CD\parallel B\).
+
+
+\section*{Прямая и плоскость, параллельные между собой}
+\addcontentsline{toc}{section}{Прямая и плоскость, параллельные между собой}
+
+\kiselevparagraph{para:parallel-line-plane-definition} \textbf{Определение.} Плоскость и прямая, не лежащая в этой плоскости, называются \emph{параллельными}, если они \emph{не пересекаются}, сколько бы их ни продолжали.
+
+Следующие две теоремы выражают \emph{признаки} параллельности прямой с плоскостью.
+
+\kiselevparagraph{para:line-plane-parallel-criteria} \textbf{Теорема 1. Если прямая} \(AB\) (рис.~\ref{fig:kiselev-stereo-320}) \textbf{и плоскость} \(P\) \textbf{перпендикулярны к одной и той же прямой} \(AC\)\textbf{, то они параллельны.}
+
+\begin{figure}[htbp]
+    \centering
+    \renewcommand{\thefigure}{320}
+    \captionsetup{name=Рис.,labelsep=period}
+    \input{Book/images/kiselev-stereo-320.tikz}
+    \caption{Прямая \(AB\) и плоскость \(P\), перпендикулярные к прямой \(AC\)}\label{fig:kiselev-stereo-320}
+\end{figure}
+
+Предположим, что прямая \(AB\) пересекается с плоскостью \(P\) в некоторой точке \(M\). Тогда, соединив прямой эту точку с точкой, в которой плоскость \(P\) пересекается с данной прямой, мы получим два перпендикуляра \(MC\) и \(MA\) на прямую \(AC\) из одной точки \(M\), что невозможно. Значит, \(AB\) не пересекается с \(P\), то есть \(AB\) параллельна \(P\).
+
+% Печатная с. 287.
+\textbf{Теорема 2. Если прямая} \(AB\) (рис.~\ref{fig:kiselev-stereo-321}) \textbf{параллельна какой-нибудь прямой} \(CD\)\textbf{, проведённой в плоскости} \(P\)\textbf{, то она параллельна самой плоскости.}
+
+\begin{figure}[htbp]
+    \centering
+    \renewcommand{\thefigure}{321}
+    \captionsetup{name=Рис.,labelsep=period}
+    \input{Book/images/kiselev-stereo-321.tikz}
+    \caption{Прямая \(AB\), параллельная прямой \(CD\) в плоскости \(P\)}\label{fig:kiselev-stereo-321}
+\end{figure}
+
+Проведём через \(AB\) и \(CD\) плоскость \(R\) и предположим, что прямая \(AB\) где-нибудь пересекается с плоскостью \(P\). Тогда точка пересечения, находясь на прямой \(AB\), должна принадлежать также и плоскости \(R\), в которой лежит \(AB\). В то же время точка пересечения, конечно, должна принадлежать и плоскости \(P\). Значит, точка пересечения, находясь одновременно и в плоскости \(R\), и в плоскости \(P\), должна лежать на прямой \(CD\), по которой пересекаются эти плоскости. Следовательно, прямая \(AB\) пересекается с прямой \(CD\). Но это невозможно, так как, по условию, \(AB\parallel CD\). Значит, нельзя допустить, чтобы прямая \(AB\) пересекалась с плоскостью \(P\), и потому \(AB\parallel P\).
+
+Следующие теоремы выражают некоторые \emph{свойства прямой и плоскости, параллельных между собой}.
+
+\kiselevparagraph{para:parallel-line-plane-section} \textbf{Теорема. Если плоскость} \(R\) (рис.~\ref{fig:kiselev-stereo-321}) \textbf{проходит через прямую} \(AB\)\textbf{, параллельную другой плоскости} \(P\)\textbf{, и пересекает эту плоскость, то линия пересечения} \(CD\) \textbf{параллельна первой прямой} \(AB\)\textbf{.}
+
+Действительно, во-первых, прямая \(CD\) лежит в одной плоскости с \(AB\). Во-вторых, эта прямая не может пересечься с \(AB\), потому что в противном случае прямая \(AB\) пересекалась бы с плоскостью \(P\), что невозможно.
+
+\kiselevparagraph{para:line-parallel-to-two-intersecting-planes} \textbf{Следствие. Если прямая} \(AB\) (рис.~\ref{fig:kiselev-stereo-322}) \textbf{параллельна двум пересекающимся плоскостям} \(P\) и \(Q\)\textbf{, то она параллельна линии их пересечения} \(CD\)\textbf{.}
+
+\begin{figure}[htbp]
+    \centering
+    \renewcommand{\thefigure}{322}
+    \captionsetup{name=Рис.,labelsep=period}
+    \input{Book/images/kiselev-stereo-322.tikz}
+    \caption{Прямая \(AB\), параллельная пересекающимся плоскостям \(P\) и \(Q\)}\label{fig:kiselev-stereo-322}
+\end{figure}
+
+Представим плоскость, проходящую через \(AB\) и какую-нибудь точку \(M\) прямой \(CD\). Эта плоскость должна пересечься с \(P\) и \(Q\) по прямым, параллельным \(AB\) и проходящим через \(M\).
+% Печатная с. 288.
+Но через \(M\) можно провести только одну прямую, параллельную \(AB\). Значит, две линии пересечения этой плоскости с плоскостями \(P\) и \(Q\) должны слиться в одну прямую. Эта прямая, находясь одновременно и в плоскости \(P\), и в плоскости \(Q\), должна совпадать с прямой \(CD\), по которой плоскости \(P\) и \(Q\) пересекаются. Значит, \(CD\parallel AB\).
+
+\kiselevparagraph{para:distance-from-parallel-line-to-plane} \textbf{Теорема. Все точки прямой} \(AB\) (рис.~\ref{fig:kiselev-stereo-323})\textbf{, параллельной плоскости} \(P\)\textbf{, одинаково удалены от этой плоскости.}
+
+\begin{figure}[htbp]
+    \centering
+    \renewcommand{\thefigure}{323}
+    \captionsetup{name=Рис.,labelsep=period}
+    \input{Book/images/kiselev-stereo-323.tikz}
+    \caption{Точки прямой \(AB\) одинаково удалены от плоскости \(P\)}\label{fig:kiselev-stereo-323}
+\end{figure}
+
+Из каких-нибудь точек \(M\) и \(N\) прямой \(AB\) опустим на \(P\) перпендикуляры \(MC\) и \(ND\). Так как эти перпендикуляры параллельны (\hyperref[para:lines-normal-to-same-plane]{см.~§~\ref*{para:lines-normal-to-same-plane}}), то через них можно провести плоскость. Эта плоскость пересекается с \(P\) по прямой \(CD\), параллельной \(AB\) (\hyperref[para:parallel-line-plane-section]{см.~§~\ref*{para:parallel-line-plane-section}}). Поэтому фигура \(MNDC\) --- параллелограмм и, следовательно, \(MC=ND\). Но длину перпендикуляра, опущенного из точки на плоскость, принимают за меру расстояния этой точки от плоскости. Значит, любые точки \(M\) и \(N\) прямой \(AB\) одинаково удалены от плоскости \(P\).
+
+
+\section*{Параллельные плоскости}
+\addcontentsline{toc}{section}{Параллельные плоскости}
+
+\kiselevparagraph{para:parallel-planes-definition} \textbf{Определение.} Две плоскости называются \emph{параллельными}, если они \emph{не пересекаются, сколько бы их ни продолжали}.
+
+Следующие две теоремы выражают \emph{признаки} параллельности двух плоскостей.
+
+\kiselevparagraph{para:parallel-planes-criteria} \textbf{Теорема 1. Если две плоскости} \(P\) и \(Q\) (рис.~\ref{fig:kiselev-stereo-324}) \textbf{перпендикулярны к одной и той же прямой} \(AB\)\textbf{, то они параллельны.}
+
+\begin{figure}[htbp]
+    \centering
+    \renewcommand{\thefigure}{324}
+    \captionsetup{name=Рис.,labelsep=period}
+    \input{Book/images/kiselev-stereo-324.tikz}
+    \caption{Плоскости \(P\) и \(Q\), перпендикулярные к одной прямой \(AB\)}\label{fig:kiselev-stereo-324}
+\end{figure}
+
+Действительно, если бы плоскости \(P\) и \(Q\) пересекались, то через любую точку их пересечения проходили бы две плоскости \(P\) и \(Q\), перпендикулярные к прямой \(AB\), что невозможно.
+
+% Печатная с. 289.
+\phantomsection\label{thm:parallel-planes-two-lines}
+\textbf{Теорема 2. Если две пересекающиеся прямые} \(AB\) и \(AC\) (рис.~\ref{fig:kiselev-stereo-325}) \textbf{одной плоскости} \(P\) \textbf{соответственно параллельны двум прямым} \(A_1B_1\) и \(A_1C_1\) \textbf{другой плоскости} \(Q\)\textbf{, то эти плоскости параллельны.}
+
+\begin{figure}[htbp]
+    \centering
+    \renewcommand{\thefigure}{325}
+    \captionsetup{name=Рис.,labelsep=period}
+    \input{Book/images/kiselev-stereo-325.tikz}
+    \caption{Соответственно параллельные прямые в плоскостях \(P\) и \(Q\)}\label{fig:kiselev-stereo-325}
+\end{figure}
+
+Из точки \(A\) опустим на плоскость \(Q\) перпендикуляр \(AA_{11}\) и проведём прямые \(A_{11}B_{11}\) и \(A_{11}C_{11}\), соответственно параллельные прямым \(A_1B_1\) и \(A_1C_1\). Эти прямые также параллельны прямым \(AB\) и \(AC\) (\hyperref[para:lines-parallel-to-same-line]{см.~§~\ref*{para:lines-parallel-to-same-line}}). Так как \(AA_{11}\perp A_{11}B_{11}\) и \(AB\parallel A_{11}B_{11}\), то \(AA_{11}\perp AB\). Так же доказывается, что \(AA_{11}\perp AC\). Следовательно, прямая \(AA_{11}\) перпендикулярна к плоскости \(P\) (\hyperref[para:perpendicular-plane-criterion]{см.~§~\ref*{para:perpendicular-plane-criterion}}). Таким образом, плоскости \(P\) и \(Q\) перпендикулярны к одной и той же прямой \(AA_{11}\) и потому параллельны.
+
+Следующие теоремы выражают некоторые \emph{свойства параллельных плоскостей}.
+
+\kiselevparagraph{para:sections-of-parallel-planes} \textbf{Теорема. Если две параллельные плоскости} \(P\) и \(Q\) (рис.~\ref{fig:kiselev-stereo-326}) \textbf{пересекаются третьей плоскостью} \(R\)\textbf{, то линии пересечения} \(AC\) и \(BD\) \textbf{параллельны.}
+
+\begin{figure}[htbp]
+    \centering
+    \renewcommand{\thefigure}{326}
+    \captionsetup{name=Рис.,labelsep=period}
+    \input{Book/images/kiselev-stereo-326.tikz}
+    \caption{Линии пересечения параллельных плоскостей \(P\) и \(Q\) с плоскостью \(R\)}\label{fig:kiselev-stereo-326}
+\end{figure}
+
+Действительно, во-первых, прямые \(AC\) и \(BD\) находятся в одной плоскости \(R\). Во-вторых, они не могут пересечься, так как в противном случае пересекались бы плоскости \(P\) и \(Q\), что противоречит условию.
+
+\kiselevparagraph{para:transversals-of-parallel-planes} \textbf{Теоремы.}
+
+\begin{enumerate}[label=\arabic*),ref=\arabic*]
+    \item \textbf{Если прямая пересекает одну из параллельных плоскостей, то она пересекает и другую.}
+    \item \textbf{Если плоскость пересекает одну из параллельных плоскостей, то она пересекает и другую.}
+\end{enumerate}
+
+\begin{figure}[htbp]
+    \centering
+    \renewcommand{\thefigure}{327}
+    \captionsetup{name=Рис.,labelsep=period}
+    \input{Book/images/kiselev-stereo-327.tikz}
+    \caption{Пересечение параллельных плоскостей \(P\) и \(Q\)}\label{fig:kiselev-stereo-327}
+\end{figure}
+
+\begin{enumerate}[label=\arabic*),ref=\arabic*]
+    \item\label{item:line-intersects-both-parallel-planes} Пусть прямая \(AB\) (рис.~\ref{fig:kiselev-stereo-327}) пересекает в точке \(B\) плоскость \(P\), параллельную \(Q\). Соединим прямой точку \(B\) с какой-нибудь точкой плоскости \(Q\)
+    % Печатная с. 290.
+    и через \(AB\) и \(BC\) проведём плоскость, не указанную на рисунке. Эта плоскость, содержащая точки \(B\) и \(C\), пересекается с \(P\) и \(Q\) по некоторым прямым \(DE\) и \(FH\), которые параллельны (\hyperref[para:sections-of-parallel-planes]{см.~§~\ref*{para:sections-of-parallel-planes}}). Прямая \(AB\) лежит в одной плоскости с \(DE\) и \(FH\) и пересекает одну из этих параллельных. Следовательно, как мы знаем из планиметрии (\kiselevPlanimetryPage{71}{см.~§~80, пункт~1}), она пересечёт и другую, а значит, пересечёт и плоскость \(Q\).
+    \item Пусть какая-нибудь плоскость пересекает плоскость \(P\) (рис.~\ref{fig:kiselev-stereo-327}), параллельную \(Q\). Тогда на ней можно взять прямую \(AB\), которая тоже пересекает плоскость \(P\). \hyperref[item:line-intersects-both-parallel-planes]{По доказанному} эта прямая пересекает и плоскость \(Q\). Значит, с этой плоскостью пересечётся и та плоскость, в которой взята \(AB\).
+\end{enumerate}
+
+\kiselevparagraph{para:line-normal-to-parallel-planes} \textbf{Теорема. Если прямая} \(AB\) (рис.~\ref{fig:kiselev-stereo-328}) \textbf{перпендикулярна к одной из параллельных плоскостей} \(P\)\textbf{, то она перпендикулярна и к~другой}~\(Q\)\textbf{.}
+
+\begin{figure}[htbp]
+    \centering
+    \renewcommand{\thefigure}{328}
+    \captionsetup{name=Рис.,labelsep=period}
+    \input{Book/images/kiselev-stereo-328.tikz}
+    \caption{Прямая \(AB\), перпендикулярная к параллельным плоскостям \(P\) и \(Q\)}\label{fig:kiselev-stereo-328}
+\end{figure}
+
+Прямая \(AB\), пересекая одну из параллельных плоскостей, пересечёт и другую в некоторой точке \(B_1\). Проведём через \(AB\) какие-нибудь две плоскости \(M\) и \(N\), которые пересекутся с \(P\) и \(Q\) по параллельным прямым (\hyperref[para:sections-of-parallel-planes]{см.~§~\ref*{para:sections-of-parallel-planes}}): одна по \(BC\) и \(B_1C_1\), другая по \(BD\) и \(B_1D_1\). Согласно условию, прямая \(AB\) перпендикулярна к \(BC\) и \(BD\). Следовательно, она также перпендикулярна к \(B_1C_1\) и \(B_1D_1\), а потому перпендикулярна и к плоскости \(Q\).
+
+\kiselevparagraph{para:unique-parallel-plane-through-point} \textbf{Теорема. Через любую точку} \(B\) (рис.~\ref{fig:kiselev-stereo-328}) \textbf{пространства можно провести плоскость} \(P\)\textbf{, параллельную данной плоскости} \(Q\)\textbf{, и притом только одну.}
+
+Всегда можно из точки \(B\) опустить на плоскость \(Q\) перпендикуляр \(BB_1\) и затем через точку \(B\) провести плоскость \(P\), перпендикулярную к \(BB_1\). Эта плоскость будет параллельна \(Q\) (\hyperref[para:parallel-planes-criteria]{см.~§~\ref*{para:parallel-planes-criteria}, теорема~1}).
+
+% Печатная с. 291.
+Другой плоскости, параллельной \(Q\), через точку \(B\) провести нельзя, так как, если бы это было возможно, то через точку \(B\) проходили бы две плоскости, перпендикулярные к \(BB_1\) (\hyperref[para:line-normal-to-parallel-planes]{см.~§~\ref*{para:line-normal-to-parallel-planes}}), что невозможно.
+
+\kiselevparagraph{para:equal-segments-between-parallel-planes} \textbf{Теорема. Отрезки параллельных прямых} \(AC\) и \(BD\) (рис.~\ref{fig:kiselev-stereo-329})\textbf{, заключённые между параллельными плоскостями} \(P\) и \(Q\)\textbf{, равны.}
+
+\begin{figure}[htbp]
+    \centering
+    \renewcommand{\thefigure}{329}
+    \captionsetup{name=Рис.,labelsep=period}
+    \input{Book/images/kiselev-stereo-329.tikz}
+    \caption{Равные отрезки \(AC\) и \(BD\) между параллельными плоскостями}\label{fig:kiselev-stereo-329}
+\end{figure}
+
+Через параллельные прямые \(AC\) и \(BD\) проведём плоскость \(R\). Она пересечёт \(P\) и \(Q\) по параллельным прямым \(AB\) и \(CD\). Следовательно, фигура \(ABCD\)\footnote{В издании 1914 года указан порядок \(ABCD\). На рис.~\ref{fig:kiselev-stereo-329} при обходе по сторонам вершины идут в порядке \(A,B,D,C\).} будет параллелограммом, и потому \(AC=BD\).
+
+\kiselevparagraph{para:parallel-planes-equidistant} \textbf{Следствие. Параллельные плоскости везде одинаково удалены одна от другой}, потому что, если параллельные прямые \(AC\) и \(BD\) (рис.~\ref{fig:kiselev-stereo-329}) перпендикулярны к \(P\), то они также будут перпендикулярны к \(Q\) и в то же время равны.
+
+\kiselevparagraph{para:angles-with-parallel-sides} \textbf{Теорема. Два угла} \(BAC\) и \(B_1A_1C_1\) (рис.~\ref{fig:kiselev-stereo-330}) \textbf{с соответственно параллельными и одинаково направленными сторонами равны и лежат в параллельных плоскостях} \(P\) и \(Q\)\textbf{.}
+
+\begin{figure}[htbp]
+    \centering
+    \renewcommand{\thefigure}{330}
+    \captionsetup{name=Рис.,labelsep=period}
+    \input{Book/images/kiselev-stereo-330.tikz}
+    \caption{Углы \(BAC\) и \(B_1A_1C_1\) с соответственно параллельными сторонами}\label{fig:kiselev-stereo-330}
+\end{figure}
+
+То, что плоскости \(P\) и \(Q\) параллельны, было доказано прежде (\hyperref[thm:parallel-planes-two-lines]{см.~§~\ref*{para:parallel-planes-criteria}, теорема~2}). Остаётся доказать, что углы \(A\) и \(A_1\) равны.
+
+Отложим \(AB=A_1B_1\), \(AC=A_1C_1\) и проведём \(AA_1\), \(BB_1\), \(CC_1\), \(BC\) и \(B_1C_1\). Так как отрезки \(AB\) и \(A_1B_1\) равны и параллельны, то фигура \(ABB_1A_1\) является параллелограммом (\kiselevPlanimetryPage{85}{см.~Планиметрия, §~99, пункт~2}). Поэтому отрезки \(AA_1\) и \(BB_1\) равны и параллельны. По той же причине равны и параллельны отрезки \(AA_1\) и \(CC_1\). Следовательно, \(BB_1\parallel CC_1\) и \(BB_1=CC_1\). Поэтому \(BC=B_1C_1\) и \(\triangle ABC=\triangle A_1B_1C_1\) (по трём сторонам). Значит, \(\angle A=\angle A_1\).
+
+% Печатная с. 292.
+\kiselevparagraph{para:parallel-planes-proportional-segments} \textbf{Теорема. Если две прямые} \(AB\) и \(CD\) (рис.~\ref{fig:kiselev-stereo-331}) \textbf{пересекаются рядом параллельных плоскостей} \(P,Q,R,\ldots\)\textbf{, то эти плоскости делят их на пропорциональные части.}
+
+\begin{figure}[htbp]
+    \centering
+    \renewcommand{\thefigure}{331}
+    \captionsetup{name=Рис.,labelsep=period}
+    \input{Book/images/kiselev-stereo-331.tikz}
+    \caption{Пропорциональные отрезки между параллельными плоскостями}\label{fig:kiselev-stereo-331}
+\end{figure}
+
+Пусть \(E,F,H,\ldots\) --- точки пересечения прямой \(AB\) с плоскостями \(P,Q,R,\ldots\), а \(K,L,M,\ldots\) --- точки пересечения другой прямой \(CD\) с теми же плоскостями. Требуется доказать, что части \(EF,FH,\ldots\) одной прямой пропорциональны частям \(KL,LM,\ldots\) другой прямой, то есть
+\[
+    \frac{EF}{KL}=\frac{FH}{LM}=\cdots.
+\]
+
+Проведём через точку \(E\) прямую \(C_1D_1\), параллельную \(CD\), и представим плоскость, проходящую через две пересекающиеся прямые \(AB\) и \(C_1D_1\). Прямые \(L_1F,M_1H,\ldots\), по которым эта плоскость пересекается с данными плоскостями, должны быть параллельны между собой (\hyperref[para:sections-of-parallel-planes]{см.~§~\ref*{para:sections-of-parallel-planes}}). Поэтому (\kiselevPlanimetryPage{171}{см.~Планиметрия, §~219})\footnote{В первом знаменателе этой формулы в издании 1914 года напечатано \(E_1L_1\). На рис.~\ref{fig:kiselev-stereo-331} отмечена точка \(E\), а далее в доказательстве используется отрезок \(EL_1\).}
+\[
+    \frac{EF}{E_1L_1}=\frac{FH}{L_1M_1}=\cdots.
+\]
+
+Но \(EL_1=KL\), \(L_1M_1=LM,\ldots\) (\hyperref[para:equal-segments-between-parallel-planes]{см.~§~\ref*{para:equal-segments-between-parallel-planes}}). Подставив в полученный ряд равных отношений отрезки \(KL,LM,\ldots\) вместо \(EL_1,L_1M_1,\ldots\), получим то, что требовалось доказать.
+
+\clearpage
+\endgroup

@@ -1,0 +1,12 @@
+\begin{tikzpicture}[line join=round]
+    \coordinate (front left) at (0,0);
+    \coordinate (front right) at (3.6,0);
+    \coordinate (back left) at (1.5,1.65);
+    \coordinate (back right) at (5.1,1.65);
+
+    \draw[thick] (front left) -- (back left) -- (back right);
+    \draw[very thick] (front left) -- (front right) -- (back right);
+    \path (front left) -- (back left) node[midway,left] {\(M\)};
+    \path (front right) -- (back right) node[midway,right] {\(N\)};
+    \node at (2.55,0.825) {\(P\)};
+\end{tikzpicture}

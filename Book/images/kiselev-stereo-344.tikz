@@ -1,0 +1,27 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (S) at (0,3.33);
+    \coordinate (a) at (-2.22,-0.22);
+    \coordinate (b) at (-0.98,-1.39);
+    \coordinate (c) at (0.80,-1.52);
+    \coordinate (d) at (2.35,-0.46);
+    \coordinate (e) at (0.05,0.50);
+
+    \foreach \vertex/\tip in {a/A,b/B,c/C,d/D}{
+        \path (S) -- (\vertex) coordinate[pos=1.20] (\tip);
+        \draw[thick] (S) -- (\tip);
+    }
+    \path (S) -- (e) coordinate[pos=1.33] (E);
+    \draw[thick,densely dashed] (S) -- (E) (a) -- (e) -- (d);
+    \draw[very thick] (a) -- (b) -- (c) -- (d);
+    \node[above] at (S) {\(S\)};
+    \node[left] at (a) {\(a\)};
+    \node[below left,xshift=-1pt] at (b) {\(b\)};
+    \node[above right] at (c) {\(c\)};
+    \node[right] at (d) {\(d\)};
+    \node[above left,yshift=1pt] at (e) {\(e\)};
+    \node[below left] at (A) {\(A\)};
+    \node[below left] at (B) {\(B\)};
+    \node[below right] at (C) {\(C\)};
+    \node[below right] at (D) {\(D\)};
+    \node[below] at (E) {\(E\)};
+\end{tikzpicture}

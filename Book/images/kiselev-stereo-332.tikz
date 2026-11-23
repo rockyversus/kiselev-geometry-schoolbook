@@ -1,0 +1,27 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \begin{scope}
+        \coordinate (A) at (0,1.97);
+        \coordinate (B) at (0,-1.87);
+        \draw[thick] (B) -- (A) -- (2.59,1.97) -- (2.59,-1.87);
+        \draw[thick,densely dashed] (B) -- (2.59,-1.87);
+        \draw[very thick] (A) -- (2.13,1.03) -- (2.13,-2.81) -- (B);
+        \node[above left] at (A) {\(A\)};
+        \node[left] at (B) {\(B\)};
+        \node[below left] at (2.59,1.97) {\(P\)};
+        \node[below left] at (2.13,1.03) {\(Q\)};
+    \end{scope}
+    \begin{scope}[xshift=4.36cm]
+        \coordinate (C) at (0,1.97);
+        \coordinate (D) at (0,-1.87);
+        \draw[thick] (D) -- (C);
+        \foreach \x/\top/\bottom/\face in {3.6/2.27/-1.57/P,3.08/1.49/-2.35/Q,2.54/0.77/-3.07/R}{
+            \draw[thick] (C) -- (\x,\top) -- (\x,\bottom);
+            \draw[thick,densely dashed] (D) -- (\x,\bottom);
+            \node[below left] at (\x,\top) {\(\face\)};
+        }
+        \draw[very thick] (C) -- (1.91,0.13) -- (1.91,-3.71) -- (D);
+        \node[below left] at (1.91,0.13) {\(S\)};
+        \node[above left] at (C) {\(C\)};
+        \node[left] at (D) {\(D\)};
+    \end{scope}
+\end{tikzpicture}

@@ -1,0 +1,18 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (A) at (0,2.08);
+    \coordinate (B) at (0,-1.62);
+    \coordinate (C) at (2.14,-2.86);
+    \coordinate (D) at (2.95,-1.27);
+    \coordinate (E) at (0.54,-3.66);
+    \coordinate (F) at (3.56,0.85);
+
+    \draw[thick] (B) -- (A) -- (2.95,2.43) -- (D);
+    \draw[very thick] (A) -- (2.14,0.84) -- (C) -- (B);
+    \draw[thick,densely dashed] (B) -- (D) (B) -- (E) (B) -- (F);
+    \node[above left] at (A) {\(A\)};
+    \node[left] at (B) {\(B\)};
+    \node[below right] at (C) {\(C\)};
+    \node[right] at (D) {\(D\)};
+    \node[below] at (E) {\(E\)};
+    \node[right] at (F) {\(F\)};
+\end{tikzpicture}

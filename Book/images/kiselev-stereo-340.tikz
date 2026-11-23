@@ -1,0 +1,28 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (A) at (-3.55,1.29);
+    \coordinate (B) at (-0.61,1.92);
+    \coordinate (C) at (-3.55,0.40);
+    \coordinate (D) at (-0.61,0.21);
+    \coordinate (O) at (0.48,0.82);
+    \coordinate (M) at (3.02,1.3643);
+    \coordinate (N) at (3.02,0.6559);
+    \coordinate (O1) at (-1.93,-1.28);
+    \coordinate (M1) at (0.63,-0.7314);
+    \coordinate (N1) at (0.63,-1.4454);
+
+    \foreach \first/\last in {A/B,C/D,O/M,O/N,O1/M1,O1/N1}{
+        \path (\first) -- (\last) coordinate[pos=0.79] (arrow);
+        \draw[very thick,->] (\first) -- (arrow);
+        \draw[very thick] (arrow) -- (\last);
+    }
+    \node[left] at (A) {\(A\)};
+    \node[right] at (B) {\(B\)};
+    \node[left] at (C) {\(C\)};
+    \node[right] at (D) {\(D\)};
+    \node[left] at (O) {\(O\)};
+    \node[above right] at (M) {\(M\)};
+    \node[below right] at (N) {\(N\)};
+    \node[left] at (O1) {\(O_1\)};
+    \node[above right] at (M1) {\(M_1\)};
+    \node[below right] at (N1) {\(N_1\)};
+\end{tikzpicture}

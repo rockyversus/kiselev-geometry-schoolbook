@@ -1,0 +1,33 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \foreach \shift/\apex/\fronttag/\lefttag/\righttag/\centre in {0/S/A/B/C/O,5.02/S_1/A_1/B_1/C_1/O_1}{
+        \begin{scope}[xshift=\shift cm]
+            \coordinate (S) at (0,2.70);
+            \coordinate (O) at (0,-1.20);
+            \path (O) ++({1.38*cos(247)},{0.82*sin(247)}) coordinate (A);
+            \path (O) ++({1.38*cos(164)},{0.82*sin(164)}) coordinate (B);
+            \path (O) ++({1.38*cos(21)},{0.82*sin(21)}) coordinate (C);
+            \draw[thick,densely dashed] (O) ++(1.38,0)
+                arc[start angle=0,end angle=180,x radius=1.38,y radius=0.82];
+            \draw[very thick] (O) ++(-1.38,0)
+                arc[start angle=180,end angle=360,x radius=1.38,y radius=0.82];
+            \draw[thick,densely dashed] (S) -- (O) (O) -- (A) (O) -- (B) (O) -- (C) (B) -- (C);
+
+            \foreach \vertex in {A,B,C}{
+                \path (S) -- (\vertex) coordinate[pos=1.14] (tip);
+                \draw[thick] (S) -- (tip);
+            }
+            \draw[thick] (B) -- (A) -- (C);
+            \draw[thick] (S) ++(-109.87:0.87) arc[start angle=-109.87,end angle=-96.58,radius=0.87];
+            \draw[thick] (S) ++(-96.58:1.03) arc[start angle=-96.58,end angle=-70.30,radius=1.03];
+            \draw[thick] (S) ++(-96.58:1.16) arc[start angle=-96.58,end angle=-70.30,radius=1.16];
+            \draw[thick,densely dashed] (S) ++(-109.87:1.46)
+                arc[start angle=-109.87,end angle=-70.30,radius=1.46];
+
+            \node[above] at (S) {\(\apex\)};
+            \node[below right] at (A) {\(\fronttag\)};
+            \node[left] at (B) {\(\lefttag\)};
+            \node[right] at (C) {\(\righttag\)};
+            \node[fill=white,inner sep=1.3pt,right,xshift=2pt] at (O) {\(\centre\)};
+        \end{scope}
+    }
+\end{tikzpicture}

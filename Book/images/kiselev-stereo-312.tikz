@@ -1,0 +1,19 @@
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=3pt}]
+    \coordinate (A) at (0,3.45);
+    \coordinate (B) at (0,0);
+    \coordinate (C) at (2,0.28);
+    \coordinate (D) at (-0.88,-1.1);
+    \coordinate (E) at (-2.18,-1.01);
+
+    \draw[thick] (-3.4,-1.91) -- (-1.95,1.38) -- (3.6,1.38);
+    \draw[very thick] (-3.4,-1.91) -- (2.15,-1.91) -- (3.6,1.38);
+    \draw[very thick] (A) -- (B);
+    \draw[thick] (A) -- (C) -- (B) -- (D) -- (A) -- (E) -- (B);
+
+    \node[above] at (A) {\(A\)};
+    \node[above right] at (B) {\(B\)};
+    \node[right] at (C) {\(C\)};
+    \node[below right] at (D) {\(D\)};
+    \node[below left] at (E) {\(E\)};
+    \node at (2.88,0.97) {\(P\)};
+\end{tikzpicture}

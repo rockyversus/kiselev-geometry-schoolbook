@@ -1,0 +1,28 @@
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=3pt}]
+    \coordinate (A) at (-1.05,2.75);
+    \coordinate (B) at (-1.05,-2.65);
+    \coordinate (C) at (-1.05,0);
+    \coordinate (D) at (1.9,0.55);
+    \coordinate (E) at (0.92,-0.72);
+    \coordinate (Pbottom) at (1.9,-2.1);
+    \coordinate (Qbottom) at (0.92,-3.37);
+
+    \draw[thick] (-1.05,1.52) -- (-1.9,1.52) -- (-3.2,-1.58);
+    \draw[thick,densely dashed] (-1.05,1.52) -- (1.9,1.52);
+    \draw[very thick] (-3.2,-1.58) -- (2.77,-1.58) -- (4.07,1.52) -- (1.9,1.52);
+
+    \draw[thick] (D) -- (1.9,3.3) -- (A) -- (0.92,2.03) -- (E) -- (C) -- (A);
+    \draw[thick,densely dashed] (C) -- (D) -- (1.9,-1.58)
+        (C) -- (-1.05,-1.58) (E) -- (0.92,-1.58) (B) -- (Pbottom);
+    \draw[thick] (-1.05,-1.58) -- (B) -- (Qbottom) -- (0.92,-1.58)
+        (1.9,-1.58) -- (Pbottom);
+
+    \node[above left] at (A) {\(A\)};
+    \node[left] at (B) {\(B\)};
+    \node[left] at (C) {\(C\)};
+    \node[below right] at (D) {\(D\)};
+    \node[below right] at (E) {\(E\)};
+    \node at (1.5,2.85) {\(P\)};
+    \node at (0.35,1.85) {\(Q\)};
+    \node at (-2.56,-1.14) {\(R\)};
+\end{tikzpicture}

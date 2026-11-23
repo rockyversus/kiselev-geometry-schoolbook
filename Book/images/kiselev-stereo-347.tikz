@@ -1,0 +1,21 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (S) at (0,2.91);
+    \coordinate (A) at (-2.70,-0.50);
+    \coordinate (B) at (-1.37,-1.17);
+    \coordinate (C) at (1.35,-1.19);
+    \coordinate (D) at (2.82,-0.39);
+    \coordinate (E) at (0,0.18);
+
+    \foreach \point in {A,B,C,D}{
+        \path (S) -- (\point) coordinate[pos=1.16] (tip);
+        \draw[thick] (S) -- (tip);
+    }
+    \draw[thick,densely dashed] (S) -- (0,-0.65) (A) -- (E) -- (D);
+    \draw[very thick] (A) -- (B) -- (C) -- (D);
+    \node[above] at (S) {\(S\)};
+    \node[left] at (A) {\(A\)};
+    \node[below left] at (B) {\(B\)};
+    \node[below right] at (C) {\(C\)};
+    \node[right] at (D) {\(D\)};
+    \node[above right] at (E) {\(E\)};
+\end{tikzpicture}

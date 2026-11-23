@@ -1,0 +1,24 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (A) at (-2.00,1.35);
+    \coordinate (B) at (1.88,2.96);
+    \coordinate (a) at (-2.00,-0.54);
+    \coordinate (b) at (1.88,-0.19);
+    \path (A) -- (B) coordinate[pos=0.30] (M) coordinate[pos=0.66] (N);
+    \path (a) -- (b) coordinate[pos=0.30] (m) coordinate[pos=0.66] (n);
+    \draw[thick] (-3.31,-1.45) -- (-2.30,0.87) -- (3.31,0.87);
+    \draw[very thick] (-3.31,-1.45) -- (2.30,-1.45) -- (3.31,0.87);
+    \draw[thick] (a) -- (A) (m) -- (M) (n) -- (N) (b) -- (B) (a) -- (b);
+    \draw[very thick] (A) -- (B);
+    \foreach \point in {M,N} {
+        \fill (\point) circle[radius=1pt];
+    }
+    \node[left] at (A) {\(A\)};
+    \node[above] at (B) {\(B\)};
+    \node[above] at (M) {\(M\)};
+    \node[above] at (N) {\(N\)};
+    \foreach \point in {a,m,n,b} {
+        \node[below] at (\point) {\(\point\)};
+    }
+    \node at (-2.60,-1.06) {\(P\)};
+    \node at (1.19,1.48) {\(Q\)};
+\end{tikzpicture}

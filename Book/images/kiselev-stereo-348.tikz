@@ -1,0 +1,10 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (S) at (0,2.31);
+    \draw[very thick] (S) -- (-1.93,-1.02) node[below left] {\(A\)}
+        (S) -- (-0.06,-1.70) node[below] {\(B\)}
+        (S) -- (1.08,-1.51) node[below right] {\(C\)};
+    \draw[thick,densely dashed] (S) -- (-3.26,-0.12) node[below left] {\(A_1\)}
+        (S) -- (-0.61,-0.24) node[below] {\(B_1\)}
+        (S) -- (3.25,-0.72) node[below right] {\(C_1\)};
+    \node[above] at (S) {\(S\)};
+\end{tikzpicture}

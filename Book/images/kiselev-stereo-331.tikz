@@ -1,0 +1,48 @@
+\begin{tikzpicture}[line cap=round,line join=round,scale=0.82]
+    \coordinate (E) at (0.05,4.2);
+    \coordinate (F) at (0.7325,0.95);
+    \coordinate (H) at (1.436,-2.4);
+    \coordinate (K) at (-1.95,4.2);
+    \coordinate (L) at (-2.8275,0.95);
+    \coordinate (M) at (-3.732,-2.4);
+    \coordinate (L1) at (-0.8275,0.95);
+    \coordinate (M1) at (-1.732,-2.4);
+    \foreach \height/\plane in {3.17/P,-0.08/Q,-3.43/R}{
+        \begin{scope}[yshift=\height cm]
+            \draw[thick] (-4.94,0) -- (-3.98,2.05) -- (3.05,2.05);
+            \draw[very thick] (-4.94,0) -- (2.09,0) -- (3.05,2.05);
+            \node[right] at (2.6,1.1) {\(\plane\)};
+        \end{scope}
+    }
+    \path (E) -- (F) coordinate[pos=0.3169] (frontE);
+    \path (F) -- (H) coordinate[pos=0.3075] (frontF);
+    \path (H) -- (1.8056,-4.16) coordinate[pos=0.5852] (frontH);
+    \path (K) -- (L) coordinate[pos=0.3169] (frontK);
+    \path (L) -- (M) coordinate[pos=0.3075] (frontL);
+    \path (M) -- (-4.2072,-4.16) coordinate[pos=0.5852] (frontM);
+    \path (E) -- (L1) coordinate[pos=0.3169] (frontE1);
+    \path (L1) -- (M1) coordinate[pos=0.3075] (frontL1);
+    \path (M1) -- (-2.2072,-4.16) coordinate[pos=0.5852] (frontM1);
+
+    \draw[thick,densely dashed] (E) -- (frontE) (F) -- (frontF) (H) -- (frontH)
+        (K) -- (frontK) (L) -- (frontL) (M) -- (frontM)
+        (E) -- (frontE1) (L1) -- (frontL1) (M1) -- (frontM1);
+    \draw[thick] (-0.2755,5.75) node[above left] {\(A\)} -- (E)
+        (frontE) -- (F) (frontF) -- (H)
+        (frontH) -- (1.8056,-4.16) node[below right] {\(B\)};
+    \draw[thick] (-1.5315,5.75) node[above left] {\(C\)} -- (K)
+        (frontK) -- (L) (frontL) -- (M)
+        (frontM) -- (-4.2072,-4.16) node[below] {\(D\)};
+    \draw[thick] (0.4685,5.75) node[above right] {\(C_1\)} -- (E)
+        (frontE1) -- (L1) (frontL1) -- (M1)
+        (frontM1) -- (-2.2072,-4.16) node[below] {\(D_1\)};
+    \draw[thick] (L1) -- (F) (M1) -- (H);
+    \node[right] at (E) {\(E\)};
+    \node[right] at (F) {\(F\)};
+    \node[right] at (H) {\(H\)};
+    \node[left] at (K) {\(K\)};
+    \node[left] at (L) {\(L\)};
+    \node[right] at (M) {\(M\)};
+    \node[left] at (L1) {\(L_1\)};
+    \node[left] at (M1) {\(M_1\)};
+\end{tikzpicture}

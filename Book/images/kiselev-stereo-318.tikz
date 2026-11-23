@@ -1,0 +1,8 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \draw[thick] (-2.95,-1.62) -- (-1.95,0.96) -- (3.1,0.96);
+    \draw[very thick] (-2.95,-1.62) -- (2.1,-1.62) -- (3.1,0.96);
+    \draw[thick] (-1.4,-0.83) -- (-1.4,2.64) node[above right] {\(A\)};
+    \draw[thick] (0.04,-0.18) -- (0.04,3.29) node[above right] {\(B\)};
+    \draw[thick] (1.48,-0.59) -- (1.48,2.88) node[above right] {\(C\)};
+    \node at (-2.31,-1.13) {\(P\)};
+\end{tikzpicture}

@@ -1,0 +1,20 @@
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=3pt}]
+    \coordinate (A) at (-1.26,3.62);
+    \coordinate (B) at (-1.26,0.2);
+    \coordinate (D) at (0.35,-1.31);
+    \coordinate (E) at (1.51,0.95);
+    \path (D) -- (E) coordinate[midway] (C);
+
+    \draw[thick] (-3.25,-1.95) -- (-1.92,1.53) -- (3.45,1.53);
+    \draw[very thick] (-3.25,-1.95) -- (2.12,-1.95) -- (3.45,1.53);
+    \draw[very thick] (A) -- (B);
+    \draw[thick] (A) -- (C) -- (B) (D) -- (E);
+    \draw[thick,densely dashed] (D) -- (A) -- (E) -- (B) -- cycle;
+
+    \node[above left] at (A) {\(A\)};
+    \node[left] at (B) {\(B\)};
+    \node[right] at (C) {\(C\)};
+    \node[below right] at (D) {\(D\)};
+    \node[right] at (E) {\(E\)};
+    \node at (-2.57,-1.53) {\(P\)};
+\end{tikzpicture}

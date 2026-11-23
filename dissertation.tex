@@ -1,0 +1,93 @@
+%&preformat-disser
+\RequirePackage[l2tabu,orthodox]{nag}  % Предупреждения об устаревших пакетах и командах
+% Формат А4, 14pt (ГОСТ Р 7.0.11-2011, 5.3.6)
+\documentclass[a4paper,14pt,oneside,openany]{memoir}
+
+%%% Настройки и пакеты
+\input{common/setup}       % Общие настройки
+\input{common/packages}    % Общие пакеты
+\input{Book/dispackages}   % Пакеты книги
+\input{Book/userpackages}  % Дополнительные пакеты
+\input{Book/setup}         % Настройки книги
+
+%%% Данные издания и оформление
+\input{common/newnames}    % Названия и подписи
+\input{common/data}        % Данные для титула и метаданных
+\input{common/fonts}       % Шрифты
+\input{common/styles}      % Общие стили
+\input{Book/disstyles}     % Стили книги
+\input{Book/userstyles}    % Дополнительные стили
+
+%%% Библиография
+% Движок задаётся параметром bibliosel в common/setup.tex.
+\ifnumequal{\value{bibliosel}}{0}{%
+    \input{biblio/predefined}  % BibTeX8
+}{%
+    \input{biblio/biblatex}    % BibLaTeX и Biber
+}
+
+%%% Диагностика сборки
+\typeout{Selected options:}
+\typeout{Draft mode: \arabic{draft}}
+\typeout{Font: \arabic{fontfamily}}
+\typeout{AltFont: \arabic{usealtfont}}
+\typeout{Bibliography backend: \arabic{bibliosel}}
+\typeout{Precompile images: \arabic{imgprecompile}}
+\listfiles  % Версии пакетов в журнале сборки
+
+\begin{document}
+
+%%% Русские названия разделов и подписей для Babel и Polyglossia
+% https://tex.stackexchange.com/a/156050
+\gappto\captionsrussian{\input{common/renames}}
+\input{common/renames}
+\gappto\captionsrussian{\input{Book/renames}}
+\input{Book/renames}
+
+%%% Титул и оглавление
+\include{Book/title}
+\include{Book/contents}
+
+%%% Введение
+% Здесь номера рисунков и таблиц не зависят от номера главы.
+\ifnumequal{\value{contnumfig}}{1}{}{%
+    \counterwithout{figure}{chapter}%
+}
+\ifnumequal{\value{contnumtab}}{1}{}{%
+    \counterwithout{table}{chapter}%
+}
+\include{Book/introduction}
+
+%%% Главы I–V
+% В главах нумерация рисунков и таблиц следует настройкам Book/setup.tex.
+\ifnumequal{\value{contnumfig}}{1}{%
+    \counterwithout{figure}{chapter}%
+}{%
+    \counterwithin{figure}{chapter}%
+}
+\ifnumequal{\value{contnumtab}}{1}{%
+    \counterwithout{table}{chapter}%
+}{%
+    \counterwithin{table}{chapter}%
+}
+
+\begingroup
+    \chapterstyle{kiselev}
+    \renewcommand*{\thechapter}{\Roman{chapter}}
+    \include{Book/part1}  % Глава I
+    \include{Book/part2}  % Глава II
+    \include{Book/part3}  % Глава III
+    \include{Book/part4}  % Глава IV
+    \include{Book/part5}  % Глава V
+\endgroup
+
+%%% Заключительные разделы
+\include{Book/conclusion}  % Заключение
+\include{Book/acronyms}    % Список сокращений и условных обозначений
+\include{Book/dictionary}  % Словарь терминов
+\include{Book/references}  % Список литературы
+\include{Book/lists}       % Списки рисунков и таблиц
+
+\setcounter{totalchapter}{\value{chapter}}  % Количество глав
+
+\end{document}

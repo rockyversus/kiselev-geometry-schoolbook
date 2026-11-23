@@ -1,0 +1,23 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (A) at (1.1,2.9);
+    \coordinate (B) at (-1.61,-0.18);
+    \coordinate (C) at (1.1,0.63);
+    \coordinate (D) at (0.56,-1.03);
+    \draw[thick] (-3.05,-1.62) -- (-1.98,1.28) -- (3.14,1.28);
+    \draw[very thick] (-3.05,-1.62) -- (2.07,-1.62) -- (3.14,1.28);
+    \draw[thick,densely dashed] (A) -- (C) (A) -- (D);
+    \draw[very thick] (A) -- (B) -- (C);
+    \draw[thick] (B) -- (D);
+    \draw[thick] (B) ++(16.64:0.85) arc[start angle=16.64,end angle=48.65,radius=0.85];
+    \path (B) -- (C) coordinate[pos=0.57] (CtickA) coordinate[pos=0.61] (CtickB);
+    \path (B) -- (D) coordinate[pos=0.57] (DtickA) coordinate[pos=0.61] (DtickB);
+    \draw[thick] (CtickA) ++(0.046,-0.146) -- ++(-0.092,0.292)
+        (CtickB) ++(0.046,-0.146) -- ++(-0.092,0.292)
+        (DtickA) ++(-0.052,-0.142) -- ++(0.104,0.284)
+        (DtickB) ++(-0.052,-0.142) -- ++(0.104,0.284);
+    \node[above] at (A) {\(A\)};
+    \node[left] at (B) {\(B\)};
+    \node[right] at (C) {\(C\)};
+    \node[right] at (D) {\(D\)};
+    \node at (-2.36,-0.87) {\(P\)};
+\end{tikzpicture}

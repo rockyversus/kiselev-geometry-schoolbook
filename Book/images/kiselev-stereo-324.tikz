@@ -1,0 +1,15 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \foreach \height/\plane in {0.6/P,-2.7/Q}{
+        \begin{scope}[yshift=\height cm]
+            \draw[thick] (-2.62,0) -- (-1.73,2) -- (2.58,2);
+            \draw[very thick] (-2.62,0) -- (1.69,0) -- (2.58,2);
+            \node at (1.35,1.36) {\(\plane\)};
+        \end{scope}
+    }
+    \draw[thick] (-0.53,3.68) node[above right] {\(A\)} -- (-0.53,1.48)
+        (-0.53,0.6) -- (-0.53,-1.82) (-0.53,-2.7) -- (-0.53,-3.8) node[below right] {\(B\)};
+    \draw[thick,densely dashed] (-0.53,1.48) -- (-0.53,0.6)
+        (-0.53,-1.82) -- (-0.53,-2.7);
+    \fill (-0.53,1.48) circle[radius=1.35pt];
+    \fill (-0.53,-1.82) circle[radius=1.35pt];
+\end{tikzpicture}

@@ -1,0 +1,4 @@
+\begin{tikzpicture}
+    \draw[thick] (0,0) node[left] {\(C\)} -- (2.4,0) node[right] {\(D\)};
+    \draw[thick] (0,-0.09) -- (0,0.09) (2.4,-0.09) -- (2.4,0.09);
+\end{tikzpicture}

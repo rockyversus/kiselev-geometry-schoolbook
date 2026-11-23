@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+    \foreach \leftlabel/\rightlabel/\first/\last in {A/B/0/3.3,C/D/4.9/7.9,E/F/9.5/11.3} {
+        \draw[thick] (\first,1.2) node[left] {\(\leftlabel\)}
+            -- (\last,1.2) node[right] {\(\rightlabel\)};
+        \draw[thick] (\first,1.11) -- (\first,1.29) (\last,1.11) -- (\last,1.29);
+    }
+    \draw[thick] (0.2,0) -- (8.3,0);
+    \draw[thick,densely dashed] (-0.9,0) -- (0.2,0) (8.3,0) -- (9.5,0);
+    \foreach \position/\point in {0.2/M,3.5/N,6.5/P,8.3/Q} {
+        \draw[thick] (\position,-0.09) -- (\position,0.09) node[above] {\(\point\)};
+    }
+\end{tikzpicture}

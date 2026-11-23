@@ -1,0 +1,20 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (A) at (-1.0,0.57);
+    \coordinate (B) at (1.16,2.8);
+    \coordinate (C) at (-1.0,-2.89);
+    \coordinate (D) at (1.16,-0.66);
+    \foreach \height/\plane in {0.57/P,-2.89/Q}{
+        \begin{scope}[yshift=\height cm]
+            \draw[thick] (-3.05,0) -- (-2.23,2.23) -- (3.02,2.23);
+            \draw[very thick] (-3.05,0) -- (2.2,0) -- (3.02,2.23);
+            \node at (-2.04,1.02) {\(\plane\)};
+        \end{scope}
+    }
+    \draw[thick] (A) -- (B) (C) -- (D) (A) -- (C) (1.16,0.57) -- (D);
+    \draw[thick,densely dashed] (B) -- (1.16,0.57);
+    \node[above left] at (A) {\(A\)};
+    \node[above] at (B) {\(B\)};
+    \node[above left] at (C) {\(C\)};
+    \node[below right] at (D) {\(D\)};
+    \node at (0.11,-0.42) {\(R\)};
+\end{tikzpicture}

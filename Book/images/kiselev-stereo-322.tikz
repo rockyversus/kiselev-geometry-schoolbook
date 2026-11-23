@@ -1,0 +1,16 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (C) at (-2.1,1.71);
+    \coordinate (D) at (-2.1,-1.63);
+    \coordinate (M) at (-2.1,0.38);
+    \draw[thick] (D) -- (C) -- (0.72,2.13) -- (0.72,-1.21) -- (0.33,-1.268);
+    \draw[thick,densely dashed] (0.33,-1.268) -- (D);
+    \draw[thick] (C) -- (0.33,0.89) -- (0.33,-2.45) -- (D);
+    \draw[very thick] (1.7,1.54) node[above right] {\(A\)}
+        -- (1.7,-1.98) node[below right] {\(B\)};
+    \fill (M) circle[radius=1.1pt];
+    \node[left] at (C) {\(C\)};
+    \node[left] at (M) {\(M\)};
+    \node[left] at (D) {\(D\)};
+    \node at (0.35,1.65) {\(P\)};
+    \node at (-0.16,0.69) {\(Q\)};
+\end{tikzpicture}

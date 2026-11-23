@@ -1,0 +1,16 @@
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=3pt}]
+    \coordinate (O) at (-0.55,0);
+    \coordinate (C) at (-0.55,3.05);
+    \coordinate (C1) at (0.4,3.0);
+    \coordinate (H) at (1.8,0.94);
+
+    \draw[thick] (-3,-1.38) -- (-1.6,1.58) -- (3.45,1.58);
+    \draw[very thick] (-3,-1.38) -- (2.05,-1.38) -- (3.45,1.58);
+    \draw[thick] (C) -- (O) -- (C1) (O) -- (H);
+
+    \node[left] at (O) {\(O\)};
+    \node[above] at (C) {\(C\)};
+    \node[above] at (C1) {\(C_1\)};
+    \node[right] at (H) {\(H\)};
+    \node at (-2.3,-0.98) {\(P\)};
+\end{tikzpicture}

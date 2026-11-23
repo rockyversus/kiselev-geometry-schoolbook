@@ -1,0 +1,36 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \begin{scope}
+        \coordinate (A) at (0,2.08);
+        \coordinate (B) at (0,-1.49);
+        \draw[thick] (A) -- (B);
+        % Три части угла AB.
+        \foreach \x/\top/\bottom in {3.28/2.43/-1.14,3.03/1.73/-1.84,2.69/1.02/-2.55}{
+            \draw[thick] (A) -- (\x,\top) -- (\x,\bottom);
+            \draw[thick,densely dashed] (B) -- (\x,\bottom);
+        }
+        \draw[very thick] (A) -- (2.19,0.32) -- (2.19,-3.25) -- (B);
+        \node[above left] at (A) {\(A\)};
+        \node[left] at (B) {\(B\)};
+        \node[right] at (3.28,-1.14) {\(C\)};
+        \node[below right] at (2.19,-3.25) {\(D\)};
+        \node[above right] at (3.28,2.43) {\(P\)};
+        \node[below left] at (2.19,0.32) {\(Q\)};
+    \end{scope}
+    \begin{scope}[xshift=4.96cm]
+        \coordinate (A1) at (0,2.08);
+        \coordinate (B1) at (0,-1.49);
+        \draw[thick] (A1) -- (B1);
+        % Четыре части угла A1B1.
+        \foreach \x/\top/\bottom in {3.9/3.21/-0.36,3.54/2.47/-1.10,3.20/1.71/-1.86,2.85/0.96/-2.61}{
+            \draw[thick] (A1) -- (\x,\top) -- (\x,\bottom);
+            \draw[thick,densely dashed] (B1) -- (\x,\bottom);
+        }
+        \draw[very thick] (A1) -- (2.41,0.21) -- (2.41,-3.36) -- (B1);
+        \node[above left] at (A1) {\(A_1\)};
+        \node[left] at (B1) {\(B_1\)};
+        \node[right] at (3.9,-0.36) {\(C_1\)};
+        \node[below right] at (2.41,-3.36) {\(D_1\)};
+        \node[above right] at (3.9,3.21) {\(P_1\)};
+        \node[below left] at (2.41,0.21) {\(Q_1\)};
+    \end{scope}
+\end{tikzpicture}

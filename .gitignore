@@ -1,0 +1,27 @@
+# Промежуточные файлы LaTeX
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.ilg
+*.lof
+*.log
+*.lot
+*.nlo
+*.nls
+*.out
+*.run.xml
+*.synctex.gz
+*.synctex.gz(busy)
+*.toc
+
+# Предыдущая локальная сборка
+/dissertation (1).pdf
+
+# Локальные справочные материалы и PDF для GitHub Releases
+/original/
+/Documents/
+/PSCyr/
+/dissertation.pdf

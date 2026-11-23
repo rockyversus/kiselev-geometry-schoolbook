@@ -1,0 +1,25 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (A) at (-1.4,3);
+    \coordinate (B) at (-1.4,-0.2);
+    \coordinate (C) at (0.95,3);
+    \coordinate (D) at (0.95,-0.2);
+    \coordinate (M) at (-1.4,2.24);
+    \draw[thick] (-2.95,-1.63) -- (-1.78,1.4) -- (3.15,1.4);
+    \draw[very thick] (-2.95,-1.63) -- (1.98,-1.63) -- (3.15,1.4);
+    \draw[thick] (A) -- (B) -- (D) -- (C) (M) -- (D);
+    % Верхний край плоскости R на рисунке Киселёва показан линией обрыва.
+    \draw[thick] (A) sin (-1.204,3.08) cos (-1.008,3)
+        sin (-0.812,2.92) cos (-0.616,3)
+        sin (-0.42,3.08) cos (-0.224,3)
+        sin (-0.028,2.92) cos (0.168,3)
+        sin (0.364,3.08) cos (0.56,3)
+        sin (0.755,2.92) cos (C);
+    \draw[thick] (0.43,-1.13) node[left,yshift=2pt] {\(E\)} -- (D) -- (1.47,0.73);
+    \node[above left] at (A) {\(A\)};
+    \node[below left] at (B) {\(B\)};
+    \node[above right] at (C) {\(C\)};
+    \node[right] at (D) {\(D\)};
+    \node[above right] at (M) {\(M\)};
+    \node at (-0.25,2.12) {\(R\)};
+    \node at (-2.38,-1.25) {\(P\)};
+\end{tikzpicture}

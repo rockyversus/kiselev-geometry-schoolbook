@@ -1,0 +1,39 @@
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=3pt}]
+    \coordinate (A) at (0,3.65);
+    \coordinate (A1) at (0,-3.65);
+    \coordinate (B) at (0,0);
+    \coordinate (C) at (-2.1,0);
+    \coordinate (D) at (2.15,0);
+    \coordinate (E) at (0.85,0.88);
+    \coordinate (F) at (-0.85,-0.88);
+    \coordinate (M) at (-1.9,0.704);
+    \path (D) -- (F) coordinate[pos=0.4] (N);
+
+    \draw[thick] (-3.3,-1.2) -- (-2.15,1.75) -- (3.85,1.75);
+    \draw[very thick] (-3.3,-1.2) -- (2.7,-1.2) -- (3.85,1.75);
+    \draw[thick] (C) -- (D) (E) -- (F) (M) -- (N) (D) -- (F);
+
+    \draw[thick] (B) -- (A) -- (D) (A) -- (N) (A) -- (F);
+    % Разрывы линий к A_1 показывают, где они скрыты плоскостью P.
+    \path (A1) -- (D) coordinate[pos=0.6712] (frontD);
+    \path (A1) -- (N) coordinate[pos=0.7429] (frontN);
+    \path (A1) -- (F) coordinate[pos=0.8845] (frontF);
+    \coordinate (frontB) at (0,-1.2);
+    \draw[thick] (A1) -- (frontB) (A1) -- (frontD) (A1) -- (frontN) (A1) -- (frontF);
+    \draw[thick,densely dashed] (frontB) -- (B) (frontD) -- (D)
+        (frontN) -- (N) (frontF) -- (F);
+
+    \foreach \point in {A,A1,B,D,F,N} {
+        \filldraw[fill=white] (\point) circle[radius=1pt];
+    }
+    \node[above] at (A) {\(A\)};
+    \node[below] at (A1) {\(A_1\)};
+    \node[above left,xshift=-2pt,yshift=4pt] at (B) {\(B\)};
+    \node[left] at (C) {\(C\)};
+    \node[right] at (D) {\(D\)};
+    \node[below right,xshift=2pt] at (E) {\(E\)};
+    \node[left] at (F) {\(F\)};
+    \node[above right] at (M) {\(M\)};
+    \node[below right,xshift=1pt,yshift=-1pt] at (N) {\(N\)};
+    \node at (-2.55,-0.8) {\(P\)};
+\end{tikzpicture}

@@ -1,0 +1,53 @@
+%%% Основные сведения %%%
+\newcommand{\thesisAuthorLastName}{Киселёв}
+\newcommand{\thesisAuthorOtherNames}{Андрей Петрович}
+\newcommand{\thesisAuthorInitials}{А.\,П.}
+\newcommand{\thesisAuthor}             % Автор издания
+{%
+    \texorpdfstring{% \texorpdfstring takes two arguments and uses the first for (La)TeX and the second for pdf
+        \thesisAuthorShort% запись на титульном листе
+    }{%
+        \thesisAuthorLastName, \thesisAuthorOtherNames% эта запись для свойств pdf-файла. В таком виде, если pdf будет обработан программами для сбора библиографических сведений, будет правильно представлена фамилия.
+    }
+}
+\newcommand{\thesisAuthorShort}        % Книга, ФИО автора инициалами
+{\thesisAuthorInitials~\thesisAuthorLastName}
+%\newcommand{\thesisUdk}                % Книга, УДК
+%{\fixme{xxx.xxx}}
+\newcommand{\thesisTitleFormat}[2]{#1 #2}
+\newcommand{\thesisTitle}              % Название издания
+{\thesisTitleFormat{Элементарная}{геометрия}}
+\newcommand{\thesisSpecialtyNumber}    % Номер специальности, если используется
+{}
+\newcommand{\thesisSpecialtyTitle}     % Раздел издания
+{Стереометрия}
+%% \newcommand{\thesisSpecialtyTwoNumber} % Книга, вторая специальность, номер
+%% {\fixme{XX.XX.XX}}
+%% \newcommand{\thesisSpecialtyTwoTitle}  % Книга, вторая специальность, название
+%% {\fixme{Теория и~методика физического воспитания, спортивной тренировки,
+%% оздоровительной и~адаптивной физической культуры}}
+\newcommand{\thesisDegree}             % Название книги
+{Прямые и плоскости}
+\newcommand{\thesisDegreeShort}        % Номер книги
+{Книга~I.}
+\newcommand{\thesisCity}               % Город издания
+{Москва}
+\newcommand{\thesisYear}               % Год издания книги
+{\the\year}
+\newcommand{\thesisOrganization}       % Строка об исходном издании на титуле
+{По 23-му изданию 1914 года}
+
+%% \newcommand{\supervisorDead}{}           % Рисовать рамку вокруг фамилии
+\newcommand{\supervisorFio}              % Автор современной переработки
+{rocky\_versus}
+\newcommand{\supervisorRegalia}          % Репозиторий проекта
+{\href{https://github.com/rockyversus/kiselev-geometry-schoolbook}{\nolinkurl{github.com/rockyversus/kiselev-geometry-schoolbook}}}
+
+%% \newcommand{\supervisorTwoDead}{}        % Рисовать рамку вокруг фамилии
+%% \newcommand{\supervisorTwoFio}           % Второй научный руководитель, ФИО
+%% {\fixme{Фамилия Имя Отчество}}
+%% \newcommand{\supervisorTwoRegalia}       % Второй научный руководитель, регалии
+%% {\fixme{уч. степень, уч. звание}}
+
+\providecommand{\keywords}%            % Ключевые слова для метаданных PDF книги
+{}

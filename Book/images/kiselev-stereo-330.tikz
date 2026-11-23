@@ -1,0 +1,27 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (A) at (-1.93,1.58);
+    \coordinate (B) at (0.16,2.5);
+    \coordinate (C) at (-0.2,1.0);
+    \coordinate (A1) at (-0.84,-2.28);
+    \coordinate (B1) at (1.25,-1.36);
+    \coordinate (C1) at (0.89,-2.86);
+    \foreach \height/\plane in {0.52/P,-3.34/Q}{
+        \begin{scope}[yshift=\height cm]
+            \draw[thick] (-3.08,0) -- (-2.25,2.5) -- (3.16,2.5);
+            \draw[very thick] (-3.08,0) -- (2.33,0) -- (3.16,2.5);
+            \node[left,xshift=-3pt] at (-2.18,2.17) {\(\plane\)};
+        \end{scope}
+    }
+    \path (A) -- (A1) coordinate[pos=0.2746] (frontA);
+    \path (B) -- (B1) coordinate[pos=0.5130] (frontB);
+    \path (C) -- (C1) coordinate[pos=0.1244] (frontC);
+    \draw[thick,densely dashed] (A) -- (frontA) (B) -- (frontB) (C) -- (frontC);
+    \draw[thick] (frontA) -- (A1) (frontB) -- (B1) (frontC) -- (C1);
+    \draw[very thick] (A) -- (B) -- (C) -- cycle (A1) -- (B1) -- (C1) -- cycle;
+    \node[left] at (A) {\(A\)};
+    \node[right] at (B) {\(B\)};
+    \node[right] at (C) {\(C\)};
+    \node[left] at (A1) {\(A_1\)};
+    \node[right] at (B1) {\(B_1\)};
+    \node[right] at (C1) {\(C_1\)};
+\end{tikzpicture}

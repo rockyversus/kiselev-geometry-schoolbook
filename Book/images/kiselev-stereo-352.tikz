@@ -1,0 +1,20 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (S) at (0,0);
+    \foreach \ray/\x/\y in {A/-2.12/-3.48,B/-0.84/-3.82,C/1.17/-3.72,D/2.29/-3.24,E/-0.09/-2.56}{
+        \coordinate (\ray) at (\x,\y);
+        \coordinate (\ray-opp) at ({-(\x)},{-(\y)});
+    }
+    \draw[very thick] (A) -- (A-opp) (B) -- (S) -- (C) (D) -- (D-opp) (S) -- (E-opp);
+    \draw[thick,densely dashed] (E) -- (S) -- (B-opp) (S) -- (C-opp);
+    \node[left,inner sep=3pt,xshift=-3pt] at (S) {\(S\)};
+    \node[below left] at (A) {\(A\)};
+    \node[below] at (B) {\(B\)};
+    \node[below] at (C) {\(C\)};
+    \node[below right] at (D) {\(D\)};
+    \node[below right] at (E) {\(E\)};
+    \node[above right] at (A-opp) {\(A_1\)};
+    \node[above right] at (B-opp) {\(B_1\)};
+    \node[above left] at (C-opp) {\(C_1\)};
+    \node[above left] at (D-opp) {\(D_1\)};
+    \node[above] at (E-opp) {\(E_1\)};
+\end{tikzpicture}

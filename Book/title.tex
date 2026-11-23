@@ -1,0 +1,96 @@
+% Титульный лист (ГОСТ Р 7.0.11-2001, 5.1)
+\thispagestyle{empty}
+\hypersetup{
+  pdfauthor={\thesisAuthor},
+  pdftitle={\thesisTitle},
+  pdfsubject={\thesisSpecialtyTitle. \thesisDegreeShort\ \thesisDegree},
+}
+\begin{center}
+{\small \thesisOrganization\par}
+\end{center}
+%
+\vspace{0pt plus4fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
+\begingroup
+\newcommand{\kiselevTitleNotice}{%
+  \textbf{Открытый проект}\\
+  Доступно бесплатно\\[0.5\baselineskip]
+  Современная редакция\\
+  и новые рисунки\\
+  по лицензии \href{https://creativecommons.org/licenses/by/4.0/}{CC~BY~4.0}%
+}
+\IfFileExists{Book/images/rockyversus-github.jpg}{
+  \begin{minipage}[b]{0.5\linewidth}
+    \begin{flushleft}
+      \href{https://github.com/rockyversus}{%
+        \includegraphics[height=3.5cm]{Book/images/rockyversus-github.jpg}%
+      }
+    \end{flushleft}
+  \end{minipage}%
+  \begin{minipage}[b]{0.5\linewidth}
+    \begin{flushright}
+      \kiselevTitleNotice
+    \end{flushright}
+  \end{minipage}
+}{
+  \begin{flushright}
+    \kiselevTitleNotice
+  \end{flushright}
+}
+\endgroup
+%
+\vspace{0pt plus6fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
+\begin{center}
+{\Large\bfseries \thesisAuthor\par}
+\end{center}
+%
+\vspace{0pt plus1fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
+\begin{center}
+\begingroup
+  \renewcommand{\thesisTitleFormat}[2]{%
+    \scalebox{1.65}{\large\MakeUppercase{#1}}\par
+    \vspace{0.45\baselineskip}%
+    \scalebox{3.4}{\large\bfseries\MakeUppercase{#2}}\par
+  }
+  \thesisTitle
+\endgroup
+
+\vspace{0pt plus2fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
+\ifdefempty{\thesisSpecialtyNumber}
+  {%
+    {\small Раздел\par}
+    {\Large\bfseries \MakeUppercase{\thesisSpecialtyTitle}\par}
+  }
+  {{\large Специальность \thesisSpecialtyNumber\ "---\par <<\thesisSpecialtyTitle>>\par}}
+\ifdefined\thesisSpecialtyTwoNumber
+  {\large Специальность \thesisSpecialtyTwoNumber\ "---\par <<\thesisSpecialtyTwoTitle>>\par}
+\fi
+
+\vspace{0pt plus2fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
+{\small Подраздел\par}
+{\large \MakeUppercase{\thesisDegreeShort}\par}
+\smallskip
+{\LARGE \MakeUppercase{\thesisDegree}\par}
+\end{center}
+%
+\vspace{0pt plus4fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
+\begin{flushright}
+Переработка на современный лад\\
+\ifdefined\supervisorDead
+  \framebox{\supervisorFio}%
+\else
+  \supervisorFio
+\fi\\
+\supervisorRegalia
+\ifdefined\supervisorTwoFio
+  \par
+  \ifdefined\supervisorTwoDead
+    \framebox{\supervisorTwoFio}%
+  \else
+    \supervisorTwoFio
+  \fi\\
+  \supervisorTwoRegalia
+\fi
+\end{flushright}
+%
+\vspace{0pt plus4fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
+{\centering\thesisCity\ "--- \thesisYear\par}

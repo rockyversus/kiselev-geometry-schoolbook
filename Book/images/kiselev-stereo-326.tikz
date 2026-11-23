@@ -1,0 +1,22 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (A) at (-1.32,1.45);
+    \coordinate (C) at (1.04,2.19);
+    \coordinate (B) at (-0.69,-2.09);
+    \coordinate (D) at (1.67,-1.35);
+    \path (A) -- (B) coordinate[pos=0.2288] (frontA);
+    \path (C) -- (D) coordinate[pos=0.4379] (frontC);
+    \foreach \height/\plane in {0.64/P,-3.04/Q}{
+        \begin{scope}[yshift=\height cm]
+            \draw[thick] (-3.12,0) -- (-2.25,2.22) -- (3.07,2.22);
+            \draw[very thick] (-3.12,0) -- (2.2,0) -- (3.07,2.22);
+            \node[left] at (-2.68,1.14) {\(\plane\)};
+        \end{scope}
+    }
+    \draw[thick] (A) -- (C) (frontA) -- (B) -- (D) -- (frontC);
+    \draw[thick,densely dashed] (A) -- (frontA) (C) -- (frontC);
+    \node[left] at (A) {\(A\)};
+    \node[above right] at (C) {\(C\)};
+    \node[below left] at (B) {\(B\)};
+    \node[right] at (D) {\(D\)};
+    \node at (0.31,-0.35) {\(R\)};
+\end{tikzpicture}

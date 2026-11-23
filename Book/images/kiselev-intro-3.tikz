@@ -1,0 +1,5 @@
+\begin{tikzpicture}
+    \draw[thick] (0,0) node[left] {\(A\)} -- (4.2,0);
+    \draw[thick] (0,-0.09) -- (0,0.09);
+    \draw[thick,densely dashed] (4.2,0) -- (6,0);
+\end{tikzpicture}

@@ -1,0 +1,22 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (A) at (-1.75,1.69);
+    \coordinate (A11) at (-1.75,-2.15);
+    \coordinate (A1) at (0.38,-2.15);
+    \foreach \height/\plane in {0.74/P,-3.1/Q}{
+        \begin{scope}[yshift=\height cm]
+            \draw[thick] (-3.27,0) -- (-2.43,2.04) -- (3.3,2.04);
+            \draw[very thick] (-3.27,0) -- (2.46,0) -- (3.3,2.04);
+            \node[left] at (-2.89,0.92) {\(\plane\)};
+        \end{scope}
+    }
+    \draw[thick,densely dashed] (A) -- (-1.75,0.74);
+    \draw[thick] (-1.75,0.74) -- (A11);
+    \draw[very thick] (-0.48,2.26) node[right] {\(C\)} -- (A) -- (-0.48,1.12) node[right] {\(B\)};
+    \draw[thick] (-0.48,-1.58) node[right] {\(C_{11}\)} -- (A11)
+        -- (-0.48,-2.72) node[right] {\(B_{11}\)};
+    \draw[very thick] (1.65,-1.58) node[right] {\(C_1\)} -- (A1)
+        -- (1.65,-2.72) node[right] {\(B_1\)};
+    \node[left] at (A) {\(A\)};
+    \node[below left] at (A11) {\(A_{11}\)};
+    \node[left] at (A1) {\(A_1\)};
+\end{tikzpicture}

@@ -1,0 +1,21 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \foreach \shift/\apex/\lefttag/\fronttag/\righttag in {0/S/A/B/C,4.95/S_1/A_1/B_1/C_1}{
+        \begin{scope}[xshift=\shift cm]
+            \coordinate (S) at (0,2.27);
+            \coordinate (A) at (-1.45,-1.44);
+            \coordinate (B) at (0,-1.85);
+            \coordinate (C) at (1.46,-1.44);
+            \draw[thick] (A) -- (S) -- (C);
+            \draw[very thick] (S) -- (B);
+            \draw[thick] (S) ++(-111.35:0.86) arc[start angle=-111.35,end angle=-90,radius=0.86];
+            \draw[thick,densely dashed] (S) ++(-111.35:1.12)
+                arc[start angle=-111.35,end angle=-68.52,radius=1.12];
+            \path (S) -- (A) coordinate[pos=0.63] (mark);
+            \draw[thick] (mark) -- ++(0.51,-0.04) (mark) -- ++(0.39,-0.30);
+            \node[above] at (S) {\(\apex\)};
+            \node[below left] at (A) {\(\lefttag\)};
+            \node[below] at (B) {\(\fronttag\)};
+            \node[below right] at (C) {\(\righttag\)};
+        \end{scope}
+    }
+\end{tikzpicture}

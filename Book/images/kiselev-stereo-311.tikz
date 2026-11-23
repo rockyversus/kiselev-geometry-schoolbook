@@ -1,0 +1,14 @@
+\begin{tikzpicture}[line cap=round,line join=round,every node/.style={inner sep=3pt}]
+    \coordinate (O) at (0.5,2.92);
+    \coordinate (C) at (0.5,0);
+    \coordinate (C1) at (-1.53,-0.6);
+
+    \draw[thick] (-3.15,-1.46) -- (-1.65,1.45) -- (3.5,1.45);
+    \draw[very thick] (-3.15,-1.46) -- (2,-1.46) -- (3.5,1.45);
+    \draw[thick] (O) -- (C1) -- (C) -- cycle;
+
+    \node[above] at (O) {\(O\)};
+    \node[right] at (C) {\(C\)};
+    \node[below left] at (C1) {\(C_1\)};
+    \node at (1.66,0.91) {\(P\)};
+\end{tikzpicture}

@@ -1,0 +1,18 @@
+\begin{tikzpicture}[line cap=round,line join=round]
+    \coordinate (B) at (-0.72,1.47);
+    \coordinate (C) at (-0.72,-2.12);
+    \foreach \height/\plane in {0.56/P,-3.03/Q}{
+        \begin{scope}[yshift=\height cm]
+            \draw[thick] (-2.91,0) -- (-2.02,2.13) -- (2.83,2.13);
+            \draw[very thick] (-2.91,0) -- (1.94,0) -- (2.83,2.13);
+            \node at (2.21,1.69) {\(\plane\)};
+        \end{scope}
+    }
+    \draw[thick] (-1.98,3.8) node[above left] {\(A\)} -- (B);
+    \draw[thick,densely dashed] (B) -- (-0.72,0.56);
+    \draw[thick] (-0.72,0.56) -- (C);
+    \draw[thick] (-1.89,1.47) node[left] {\(D\)} -- (1.4,1.47) node[right] {\(E\)};
+    \draw[thick] (-1.89,-2.12) node[left] {\(F\)} -- (1.4,-2.12) node[right] {\(H\)};
+    \node[above right] at (B) {\(B\)};
+    \node[above right] at (C) {\(C\)};
+\end{tikzpicture}
